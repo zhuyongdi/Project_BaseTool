@@ -13,9 +13,19 @@ public class PixelTool {
         return (int) (dpValue * scale + 0.5f);
     }
 
+    //px转px
+    public static int dp2Px(float scale, float dpValue) {
+        return (int) (dpValue * scale + 0.5f);
+    }
+
     //px转dp
     public static int px2dp(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+
+    //px转dp
+    public static int px2dp(float scale, float pxValue) {
         return (int) (pxValue / scale + 0.5f);
     }
 
@@ -25,10 +35,19 @@ public class PixelTool {
         return (int) (spValue * fontScale + 0.5f);
     }
 
+    //sp转px
+    public static int sp2px(float fontScale, float spValue) {
+        return (int) (spValue * fontScale + 0.5f);
+    }
+
     //px转sp
     public static int px2sp(Context context, float pxValue) {
         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
 
+    //px转sp
+    public static int px2sp(float fontScale, float pxValue) {
+        return (int) (pxValue / fontScale + 0.5f);
+    }
 }

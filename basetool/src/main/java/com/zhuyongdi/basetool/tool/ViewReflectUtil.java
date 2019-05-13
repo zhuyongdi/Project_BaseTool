@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.screen_adaption.utils;
+package com.zhuyongdi.basetool.tool;
 
 import android.os.Build;
 import android.view.View;
@@ -6,10 +6,9 @@ import android.view.View;
 import java.lang.reflect.Method;
 
 /**
- * Created by zhangyuwan0 on 2018/3/20.
+ * Created by ZhuYongdi on 2019/5/13.
  */
-
-public class ViewUtils {
+public class ViewReflectUtil {
 
     private static final String METHOD_GET_MAX_WIDTH = "getMaxWidth";
     private static final String METHOD_GET_MAX_HEIGHT = "getMaxHeight";

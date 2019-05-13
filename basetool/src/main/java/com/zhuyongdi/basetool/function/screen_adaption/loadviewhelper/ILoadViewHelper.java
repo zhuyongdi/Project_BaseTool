@@ -2,10 +2,6 @@ package com.zhuyongdi.basetool.function.screen_adaption.loadviewhelper;
 
 import android.view.View;
 
-/**
- * Created by yatoooon on 2018/5/24.
- */
-
 public interface ILoadViewHelper {
 
     void loadWidthHeightFont(View view);

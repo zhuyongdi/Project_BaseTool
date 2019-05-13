@@ -8,12 +8,16 @@ import com.zhuyongdi.basetool.function.screen_adaption.loadviewhelper.AbsLoadVie
 import com.zhuyongdi.basetool.function.screen_adaption.loadviewhelper.LoadViewHelper;
 
 /**
- * Created by yatoooon on 2018/2/6.
+ * Created by zhyongdi on 2018/2/6.
  */
-
 public class ScreenAdapterTools {
 
     private static AbsLoadViewHelper sLoadViewHelper;
+
+    private static final String KEY_DESIGN_WIDTH = "design_width";
+    private static final String KEY_DESIGN_DPI = "design_dpi";
+    private static final String KEY_FONT_SIZE = "font_size";
+    private static final String KEY_UNIT = "unit";
 
     public static AbsLoadViewHelper getInstance() {
         return sLoadViewHelper;
@@ -36,11 +40,13 @@ public class ScreenAdapterTools {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-        int designwidth = applicationInfo.metaData.getInt("designwidth");
-        int designdpi = applicationInfo.metaData.getInt("designdpi");
-        float fontsize = applicationInfo.metaData.getFloat("fontsize");
-        String unit = applicationInfo.metaData.getString("unit");
-        sLoadViewHelper = provider.provide(context, designwidth, designdpi, fontsize, unit);
+        if (applicationInfo != null) {
+            int designWidth = applicationInfo.metaData.getInt(KEY_DESIGN_WIDTH);
+            int designDpi = applicationInfo.metaData.getInt(KEY_DESIGN_DPI);
+            float fontSize = applicationInfo.metaData.getFloat(KEY_FONT_SIZE);
+            String unit = applicationInfo.metaData.getString(KEY_UNIT);
+            sLoadViewHelper = provider.provide(context, designWidth, designDpi, fontSize, unit);
+        }
     }
 
     public interface IProvider {

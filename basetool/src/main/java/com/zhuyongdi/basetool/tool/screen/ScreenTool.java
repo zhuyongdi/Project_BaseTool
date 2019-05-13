@@ -7,18 +7,38 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Build;
+import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
+import com.zhuyongdi.basetool.bean.ScreenInfo;
 import com.zhuyongdi.basetool.bean.StatusBarStyle;
+
+import static android.content.Context.WINDOW_SERVICE;
 
 /**
  * 屏幕工具类
  * Created by ZhuYongdi on 2019/3/14.
  */
 public class ScreenTool {
+
+    //获取屏幕信息
+    public static ScreenInfo getScreenInfo(Context context) {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        WindowManager windowManager = (WindowManager) context.getSystemService(WINDOW_SERVICE);
+        if (windowManager != null) {
+            windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+            ScreenInfo screenInfo = new ScreenInfo();
+            screenInfo.setScreenWidthPx(displayMetrics.widthPixels);
+            screenInfo.setScreenHeightPx(displayMetrics.heightPixels);
+            screenInfo.setDensity(displayMetrics.density);
+            screenInfo.setDensityDpi(displayMetrics.densityDpi);
+            return screenInfo;
+        }
+        return null;
+    }
 
     // 获取屏幕宽度
     public static int getScreenWidth(Context context) {

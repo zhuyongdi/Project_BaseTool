@@ -4,10 +4,6 @@ import android.view.View;
 
 import com.zhuyongdi.basetool.function.screen_adaption.loadviewhelper.AbsLoadViewHelper;
 
-/**
- * Created by yatoooon on 2018/2/6.
- */
-
 public class CustomConversion implements IConversion {
 
     @Override

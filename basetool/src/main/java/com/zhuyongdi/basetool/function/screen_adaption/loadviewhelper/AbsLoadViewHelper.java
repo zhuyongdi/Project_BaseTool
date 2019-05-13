@@ -4,28 +4,25 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zhuyongdi.basetool.bean.ScreenInfo;
 import com.zhuyongdi.basetool.function.screen_adaption.conversion.IConversion;
 import com.zhuyongdi.basetool.function.screen_adaption.conversion.SimpleConversion;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.ActualScreen;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.dp2pxUtils;
-
-/**
- * Created by yosemite on 2018/3/21.
- */
+import com.zhuyongdi.basetool.tool.screen.PixelTool;
+import com.zhuyongdi.basetool.tool.screen.ScreenTool;
 
 public abstract class AbsLoadViewHelper implements ILoadViewHelper {
 
-    protected float actualDensity;
-    protected float actualDensityDpi;
-    protected float actualWidth;
-    protected float actualHeight;
+    float actualDensity;
+    float actualDensityDpi;
+    float actualWidth;
+    float actualHeight;
 
-    protected int designWidth;
-    protected int designDpi;
-    protected float fontSize;
-    protected String unit;
+    int designWidth;
+    int designDpi;
+    float fontSize;
+    String unit;
 
-    public AbsLoadViewHelper(Context context, int designWidth, int designDpi, float fontSize, String unit) {
+    AbsLoadViewHelper(Context context, int designWidth, int designDpi, float fontSize, String unit) {
         this.designWidth = designWidth;
         this.designDpi = designDpi;
         this.fontSize = fontSize;
@@ -38,16 +35,15 @@ public abstract class AbsLoadViewHelper implements ILoadViewHelper {
     }
 
     private void setActualParams(Context context) {
-        float[] actualScreenInfo = ActualScreen.screenInfo(context);
-        if (actualScreenInfo.length == 4) {
-            actualWidth = actualScreenInfo[0];
-            actualHeight = actualScreenInfo[1];
-            actualDensity = actualScreenInfo[2];
-            actualDensityDpi = actualScreenInfo[3];
+        ScreenInfo screenInfo = ScreenTool.getScreenInfo(context);
+        if (screenInfo != null) {
+            actualWidth = screenInfo.getScreenWidthPx();
+            actualHeight = screenInfo.getScreenHeightPx();
+            actualDensity = screenInfo.getDensity();
+            actualDensityDpi = screenInfo.getDensityDpi();
         }
     }
 
-    // if subclass has owner conversion，you need override this method and provide your conversion
     public void loadView(View view) {
         loadView(view, new SimpleConversion());
     }
@@ -69,7 +65,7 @@ public abstract class AbsLoadViewHelper implements ILoadViewHelper {
 
     }
 
-    public int setValue(int value) {
+    public int getValue(int value) {
         if (value == 0) {
             return 0;
         } else if (value == 1) {
@@ -80,12 +76,11 @@ public abstract class AbsLoadViewHelper implements ILoadViewHelper {
 
     float calculateValue(float value) {
         if ("px".equals(unit)) {
-            return value * ((float) actualWidth / (float) designWidth);
+            return value * (actualWidth / (float) designWidth);
         } else if ("dp".equals(unit)) {
-            int dip = dp2pxUtils.px2dip(actualDensity, value);
+            int dip = PixelTool.px2dp(actualDensity, value);
             value = ((float) designDpi / 160) * dip;
-            return value * ((float) actualWidth / (float) designWidth);
-
+            return value * (actualWidth / (float) designWidth);
         }
         return 0;
     }

@@ -125,7 +125,7 @@ public class ImageSelectActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initImageSelectAdapter() {
-        int spacing = ScreenAdapterTools.getInstance().setValue(Config.DEFAULT_HORIZONTAL_SPACING);
+        int spacing = ScreenAdapterTools.getInstance().getValue(Config.DEFAULT_HORIZONTAL_SPACING);
         rlv_content.setLayoutManager(new GridLayoutManager(this, columnNum));
         ((SimpleItemAnimator) rlv_content.getItemAnimator()).setSupportsChangeAnimations(false);
         rlv_content.addItemDecoration(new SpaceItemDecoration(spacing, false, SpaceItemDecoration.GRIDLAYOUT));

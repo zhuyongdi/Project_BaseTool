@@ -32,7 +32,7 @@ public class LoadingDialog extends Dialog {
         setCanceledOnTouchOutside(false);
         Window window = getWindow();
         window.setContentView(view);
-        int dialogWidthAndHeight = ScreenAdapterTools.getInstance().setValue(220);
+        int dialogWidthAndHeight = ScreenAdapterTools.getInstance().getValue(220);
         window.setLayout(dialogWidthAndHeight, dialogWidthAndHeight);
         window.setGravity(Gravity.CENTER);
         window.setBackgroundDrawableResource(android.R.color.transparent);

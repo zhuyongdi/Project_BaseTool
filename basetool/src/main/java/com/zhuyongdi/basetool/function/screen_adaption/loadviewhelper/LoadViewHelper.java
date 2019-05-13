@@ -5,12 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.zhuyongdi.basetool.function.screen_adaption.utils.ViewUtils;
-
-
-/**
- * Created by yatoooon on 2018/2/6.
- */
+import com.zhuyongdi.basetool.tool.ViewReflectUtil;
 
 public class LoadViewHelper extends AbsLoadViewHelper {
 
@@ -22,10 +17,10 @@ public class LoadViewHelper extends AbsLoadViewHelper {
     public void loadWidthHeightFont(View view) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams.width > 0) {
-            layoutParams.width = setValue(layoutParams.width);
+            layoutParams.width = getValue(layoutParams.width);
         }
         if (layoutParams.height > 0) {
-            layoutParams.height = setValue(layoutParams.height);
+            layoutParams.height = getValue(layoutParams.height);
         }
         loadViewFont(view);
     }
@@ -44,7 +39,7 @@ public class LoadViewHelper extends AbsLoadViewHelper {
 
     @Override
     public void loadPadding(View view) {
-        view.setPadding(setValue(view.getPaddingLeft()), setValue(view.getPaddingTop()), setValue(view.getPaddingRight()), setValue(view.getPaddingBottom()));
+        view.setPadding(getValue(view.getPaddingLeft()), getValue(view.getPaddingTop()), getValue(view.getPaddingRight()), getValue(view.getPaddingBottom()));
     }
 
     @Override
@@ -53,30 +48,29 @@ public class LoadViewHelper extends AbsLoadViewHelper {
         ViewGroup.MarginLayoutParams marginLayoutParams;
         if (params instanceof ViewGroup.MarginLayoutParams) {
             marginLayoutParams = (ViewGroup.MarginLayoutParams) params;
-            marginLayoutParams.leftMargin = setValue(marginLayoutParams.leftMargin);
-            marginLayoutParams.topMargin = setValue(marginLayoutParams.topMargin);
-            marginLayoutParams.rightMargin = setValue(marginLayoutParams.rightMargin);
-            marginLayoutParams.bottomMargin = setValue(marginLayoutParams.bottomMargin);
+            marginLayoutParams.leftMargin = getValue(marginLayoutParams.leftMargin);
+            marginLayoutParams.topMargin = getValue(marginLayoutParams.topMargin);
+            marginLayoutParams.rightMargin = getValue(marginLayoutParams.rightMargin);
+            marginLayoutParams.bottomMargin = getValue(marginLayoutParams.bottomMargin);
             view.setLayoutParams(marginLayoutParams);
         }
     }
 
     @Override
     public void loadMaxWidthAndHeight(View view) {
-        ViewUtils.setMaxWidth(view, setValue(ViewUtils.getMaxWidth(view)));
-        ViewUtils.setMaxHeight(view, setValue(ViewUtils.getMaxHeight(view)));
+        ViewReflectUtil.setMaxWidth(view, getValue(ViewReflectUtil.getMaxWidth(view)));
+        ViewReflectUtil.setMaxHeight(view, getValue(ViewReflectUtil.getMaxHeight(view)));
     }
 
     @Override
     public void loadMinWidthAndHeight(View view) {
-        ViewUtils.setMinWidth(view, setValue(ViewUtils.getMinWidth(view)));
-        ViewUtils.setMinHeight(view, setValue(ViewUtils.getMinHeight(view)));
+        ViewReflectUtil.setMinWidth(view, getValue(ViewReflectUtil.getMinWidth(view)));
+        ViewReflectUtil.setMinHeight(view, getValue(ViewReflectUtil.getMinHeight(view)));
     }
 
     @Override
     public int loadCustomAttrValue(int px) {
-        return setValue(px);
+        return getValue(px);
     }
-
 
 }
