@@ -8,7 +8,6 @@ import android.os.Build;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,7 +32,8 @@ public class LoadingDialog extends Dialog {
         setCanceledOnTouchOutside(false);
         Window window = getWindow();
         window.setContentView(view);
-        window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        int dialogWidthAndHeight = ScreenAdapterTools.getInstance().setValue(220);
+        window.setLayout(dialogWidthAndHeight, dialogWidthAndHeight);
         window.setGravity(Gravity.CENTER);
         window.setBackgroundDrawableResource(android.R.color.transparent);
         initUI();
