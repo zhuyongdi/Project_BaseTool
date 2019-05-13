@@ -8,6 +8,7 @@ import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 
+import com.zhuyongdi.basetool.function.permission.SettingService;
 import com.zhuyongdi.basetool.function.permission.source.Source;
 
 /**
