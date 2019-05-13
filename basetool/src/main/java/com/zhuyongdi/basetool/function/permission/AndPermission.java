@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 
 import com.zhuyongdi.basetool.function.permission.setting.PermissionSetting;
+import com.zhuyongdi.basetool.function.permission.setting.SettingService;
 import com.zhuyongdi.basetool.function.permission.source.AppActivitySource;
 import com.zhuyongdi.basetool.function.permission.source.ContextSource;
 import com.zhuyongdi.basetool.function.permission.source.FragmentSource;

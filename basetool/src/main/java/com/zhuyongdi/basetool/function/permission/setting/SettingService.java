@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.permission;
+package com.zhuyongdi.basetool.function.permission.setting;
 
 /**
  * Created by ZhuYongdi on 2019/5/10.
