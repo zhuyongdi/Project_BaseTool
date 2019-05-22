@@ -14,6 +14,7 @@ import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.screen_adaption.ScreenAdapterTools;
 
 /**
+ * 权限提示框
  * Created by ZhuYongdi on 2019/5/10.
  */
 public class PermissionDialog extends Dialog implements View.OnClickListener {

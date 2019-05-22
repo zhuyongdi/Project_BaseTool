@@ -3,6 +3,7 @@ package com.zhuyongdi.basetool.tool.screen;
 import android.content.Context;
 
 /**
+ * 像素相关工具类
  * Created by ZhuYongdi on 2019/4/17.
  */
 public class PixelTool {

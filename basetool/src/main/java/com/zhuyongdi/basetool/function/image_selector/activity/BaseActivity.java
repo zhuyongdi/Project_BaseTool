@@ -3,7 +3,6 @@ package com.zhuyongdi.basetool.function.image_selector.activity;
 import android.app.Activity;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.bean.StatusBarStyle;
 import com.zhuyongdi.basetool.function.permission.Action;
 import com.zhuyongdi.basetool.function.permission.AndPermission;
 import com.zhuyongdi.basetool.function.permission.Permission;
@@ -22,7 +21,7 @@ public class BaseActivity extends Activity {
     }
 
     public void setTxtStatusBar() {
-        ScreenTool.setImmersiveStatusBar(this, findViewById(R.id.empty), android.R.color.white, StatusBarStyle.TEXT);
+        ScreenTool.setImmersiveStatusBarMode(this, findViewById(R.id.empty), 0xFFFFFFFF);
         ScreenTool.setStatusBarLightMode(this);
     }
 
