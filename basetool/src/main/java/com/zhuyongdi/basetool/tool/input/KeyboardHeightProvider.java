@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -73,6 +74,11 @@ public class KeyboardHeightProvider extends PopupWindow {
     public int COMPARE;
 
     /**
+     * 设置是否打印Log
+     */
+    private boolean logEnable = false;
+
+    /**
      * 实例化入口
      *
      * @param activity                activity
@@ -93,7 +99,7 @@ public class KeyboardHeightProvider extends PopupWindow {
 
         parentView = activity.findViewById(android.R.id.content);
 
-        setWidth(100);
+        setWidth(0);
         setHeight(WindowManager.LayoutParams.MATCH_PARENT);
 
         popupView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -138,6 +144,13 @@ public class KeyboardHeightProvider extends PopupWindow {
     }
 
     /**
+     * 设置是否打印Log
+     */
+    public void setLogEnable(boolean logEnable) {
+        this.logEnable = logEnable;
+    }
+
+    /**
      * 获取屏幕方向
      */
     private int getScreenOrientation() {
@@ -155,7 +168,9 @@ public class KeyboardHeightProvider extends PopupWindow {
             popWindowHeight = popupView.getHeight();
         }
         int keyboardHeight = popWindowHeight - rect.bottom;
-
+        if (logEnable) {
+            Log.v(TAG, "软键盘高度变化:height:" + keyboardHeight);
+        }
         if (keyboardHeight == 0) {
             notifyKeyboardHeightChanged(0, orientation);
         } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
