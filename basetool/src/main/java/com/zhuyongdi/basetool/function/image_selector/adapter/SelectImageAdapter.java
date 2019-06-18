@@ -11,8 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaBean;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaType;
@@ -45,8 +43,6 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
     private int videoHeight;
     private int selectPadding;
     private int videoMargin;
-
-    private RequestOptions glideOptions = new RequestOptions().centerCrop();
 
     public SelectImageAdapter(Context context, ArrayList<MediaBean> list, int gridColumnNum, int horizontalSpacing) {
         this.context = context;
@@ -85,7 +81,7 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
         MediaBean bean = list.get(position);
         resize(bean.getType(), (ViewHolder) holder);
-        Glide.with(context).load(new File(bean.getPath())).apply(glideOptions).into(((ViewHolder) holder).iv_logo);
+//        Glide.with(context).load(new File(bean.getPath())).apply(glideOptions).into(((ViewHolder) holder).iv_logo);
         if (bean.isSelect()) {
             ((ViewHolder) holder).iv_select.setBackgroundResource(R.mipmap.icon_select);
         } else {

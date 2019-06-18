@@ -8,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.image_selector.bean.Folder;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaType;
@@ -25,9 +23,9 @@ public class SelectMenuAdapter extends BaseAdapter {
     private ArrayList<Folder> data;
     private LayoutInflater inflater;
     private MediaType selectType;
-    private RequestOptions glideRequestOptions = new RequestOptions()
-            .error(R.mipmap.image)
-            .placeholder(R.mipmap.image);
+//    private RequestOptions glideRequestOptions = new RequestOptions()
+//            .error(R.mipmap.image)
+//            .placeholder(R.mipmap.image);
 
     public SelectMenuAdapter(Context context, ArrayList<Folder> data, MediaType selectType) {
         this.context = context;
@@ -62,10 +60,10 @@ public class SelectMenuAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         Folder folder = data.get(position);
-        Glide.with(context)
-                .load(folder.getFirstImagePath())
-                .apply(glideRequestOptions)
-                .into(holder.iv_image);
+//        Glide.with(context)
+//                .load(folder.getFirstImagePath())
+//                .apply(glideRequestOptions)
+//                .into(holder.iv_image);
         holder.tv_name.setText(folder.getName());
         String end;
         if (selectType == MediaType.VIDEO) {
