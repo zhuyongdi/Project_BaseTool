@@ -5,8 +5,8 @@ import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 
-import com.zhuyongdi.app.decoration.divider.ZYDColorDivider;
-import com.zhuyongdi.app.decoration.divider.ZYDIDivider;
+import com.zhuyongdi.basetool.function.decoration.divider.ZYDColorDivider;
+import com.zhuyongdi.basetool.function.decoration.divider.ZYDIDivider;
 
 
 /**

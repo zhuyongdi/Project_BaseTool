@@ -9,9 +9,9 @@ import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.zhuyongdi.app.decoration.divider.ZYDIDivider;
-import com.zhuyongdi.app.decoration.provider.ZYDDefaultGridProvider;
-import com.zhuyongdi.app.decoration.provider.ZYDIGridProvider;
+import com.zhuyongdi.basetool.function.decoration.divider.ZYDIDivider;
+import com.zhuyongdi.basetool.function.decoration.provider.ZYDDefaultGridProvider;
+import com.zhuyongdi.basetool.function.decoration.provider.ZYDIGridProvider;
 
 /**
  * Created by dkzwm on 2017/4/5.

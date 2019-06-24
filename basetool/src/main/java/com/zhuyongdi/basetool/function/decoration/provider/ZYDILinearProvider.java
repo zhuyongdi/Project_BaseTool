@@ -1,6 +1,6 @@
 package com.zhuyongdi.basetool.function.decoration.provider;
 
-import com.zhuyongdi.app.decoration.divider.ZYDIDivider;
+import com.zhuyongdi.basetool.function.decoration.divider.ZYDIDivider;
 
 /**
  * Created by dkzwm on 2017/4/12.

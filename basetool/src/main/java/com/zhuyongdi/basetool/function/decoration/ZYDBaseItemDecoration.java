@@ -10,7 +10,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 
-import com.zhuyongdi.app.decoration.provider.ZYDIProvider;
+import com.zhuyongdi.basetool.function.decoration.provider.ZYDIProvider;
 
 /**
  * The base ItemDecoration
