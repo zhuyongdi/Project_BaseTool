@@ -26,7 +26,7 @@ public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
     //表示注解所存活的时间,在运行时,而不会存在. class 文件.
     @Retention(RetentionPolicy.SOURCE)
     public @interface LayoutManager {
-        public int type() default LINEARLAYOUT;
+        int type() default LINEARLAYOUT;
     }
 
     private int leftRight;
