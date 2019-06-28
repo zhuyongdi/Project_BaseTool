@@ -106,7 +106,7 @@ public class ChinaAreaIDCode {
     /**
      * 广西
      */
-    public static final String GOANG_XI = "45";
+    public static final String GUANG_XI = "45";
 
     /**
      * 海南
@@ -210,7 +210,7 @@ public class ChinaAreaIDCode {
         AREA_CODE_TABLE.put(ChinaAreaIDCode.HU_BEI, ChinaAreaString.HU_BEI);
         AREA_CODE_TABLE.put(ChinaAreaIDCode.HU_NAN, ChinaAreaString.HU_NAN);
         AREA_CODE_TABLE.put(ChinaAreaIDCode.GUANG_DONG, ChinaAreaString.GUANG_DONG);
-        AREA_CODE_TABLE.put(ChinaAreaIDCode.GOANG_XI, ChinaAreaString.GOANG_XI);
+        AREA_CODE_TABLE.put(ChinaAreaIDCode.GUANG_XI, ChinaAreaString.GUANG_XI);
         AREA_CODE_TABLE.put(ChinaAreaIDCode.HAI_NAN, ChinaAreaString.HAI_NAN);
 
         AREA_CODE_TABLE.put(ChinaAreaIDCode.CHONG_QING, ChinaAreaString.CHONG_QING);
