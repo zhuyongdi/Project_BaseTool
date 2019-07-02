@@ -13,6 +13,38 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
+    <!-- activity进出场动画_平移 -->
+    <style name="activity_animation_translate" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">
+            @anim/activity_animation_translate_open_enter
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/activity_animation_translate_open_exit
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/activity_animation_translate_close_enter
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/activity_animation_translate_close_exit
+        </item>
+    </style>
+
+    <!-- activity进出场动画_平移 -->
+    <style name="activity_animation_fade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">
+            @anim/activity_animation_fade_open_enter_close_enter
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/activity_animation_fade_open_exit_close_exit
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/activity_animation_fade_open_enter_close_enter
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/activity_animation_fade_open_exit_close_exit
+        </item>
+    </style>
+
     <!-- Dialog主题,背景变暗 -->
     <style name="DialogStyle_BgDark" parent="android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
