@@ -6,7 +6,7 @@ import java.util.List;
  * List工具类
  * Created by ZhuYongdi on 2019/3/18.
  */
-public class ListUtil {
+public class ZYDListUtil {
 
     public static boolean isEmpty(List<?> list) {
         return list == null || list.size() == 0;
