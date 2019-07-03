@@ -15,11 +15,10 @@ import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaBean;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaType;
 import com.zhuyongdi.basetool.function.screen_adaption.ScreenAdapterTools;
-import com.zhuyongdi.basetool.tool.ListUtil;
+import com.zhuyongdi.basetool.tool.ZYDListUtil;
 import com.zhuyongdi.basetool.tool.RandomUtil;
 import com.zhuyongdi.basetool.tool.screen.ScreenTool;
 
-import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -66,7 +65,7 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return ListUtil.size(list);
+        return ZYDListUtil.size(list);
     }
 
     @NonNull
