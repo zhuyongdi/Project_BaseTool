@@ -4,7 +4,7 @@ package com.zhuyongdi.basetool.tool.string;
  * 字符串工具类
  * Created by Administrator on 2019/3/15.
  */
-public class StringTool {
+public class ZYDStringTool {
 
     //判断为空
     public static boolean isEmpty(String s) {
@@ -73,6 +73,26 @@ public class StringTool {
             }
         }
         return sb.toString();
+    }
+
+    /**
+     * 格式化字符串
+     * toWrappedText("！");-->裁剪为"!"
+     */
+    public static String toWrappedText(String input) {
+        if (isEmpty(input)) {
+            return "";
+        }
+        char[] c = input.toCharArray();
+        for (int i = 0, len = c.length; i < len; i++) {
+            if (c[i] == 12288) {
+                c[i] = (char) 32;
+                continue;
+            }
+            if (c[i] > 65280 && c[i] < 65375)
+                c[i] = (char) (c[i] - 65248);
+        }
+        return new String(c);
     }
 
 }
