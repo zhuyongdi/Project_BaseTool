@@ -9,7 +9,11 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.zhuyongdi.basetool.bean.ScreenInfo;
 
@@ -123,16 +127,42 @@ public class ScreenTool {
     }
 
     /**
-     * 设置沉浸式状态栏,即首先设置全屏,再设置view的高度为状态栏的高度,防止布局与状态栏重叠。
+     * 设置沉浸式状态栏,即首先设置全屏,再设置指定view的marginTop为状态栏的高度,防止布局与状态栏重叠。
      */
-    public static void setImmersiveStatusBarMode(Activity activity, View view, int color) {
+    public static void setImmersiveStatusBarMode(Activity activity, View view, int statusBarViewColor) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            View decorView = activity.getWindow().getDecorView();
-            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            activity.getWindow().setStatusBarColor(color);
-            view.getLayoutParams().height = getStatusBarHeight(activity);
-            view.setLayoutParams(view.getLayoutParams());
-            view.setBackgroundColor(color);
+            if (activity != null) {
+                setImmersiveStatusBarModeOnlyFullScreen(activity);
+            }
+            if (view != null) {
+                setImmersiveStatusBarModeOnlyViewMargin(view, statusBarViewColor);
+            }
+        }
+    }
+
+    /**
+     * 设置沉浸式状态栏,仅仅设置全屏
+     */
+    public static void setImmersiveStatusBarModeOnlyFullScreen(Activity activity) {
+        if (activity != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                View decorView = activity.getWindow().getDecorView();
+                decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            }
+        }
+    }
+
+    /**
+     * 设置沉浸式状态栏,仅仅设置view的margin
+     */
+    public static void setImmersiveStatusBarModeOnlyViewMargin(View view, int statusBarViewColor) {
+        if (view != null) {
+            view.setBackgroundColor(statusBarViewColor);
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+            if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+                ((ViewGroup.MarginLayoutParams) layoutParams).topMargin += getStatusBarHeight(view.getContext());
+                view.setLayoutParams(layoutParams);
+            }
         }
     }
 

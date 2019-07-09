@@ -95,4 +95,16 @@ public class ZYDStringTool {
         return new String(c);
     }
 
+    /**
+     * 从最后一个.开始裁剪
+     * 如:com.z.BActivity->BAActivity
+     */
+    public static String trimLastDot(String input) {
+        if (isEmpty(input)) {
+            return "";
+        }
+        int lastDotIndex = input.lastIndexOf(".");
+        return input.substring(lastDotIndex + 1, input.length());
+    }
+
 }
