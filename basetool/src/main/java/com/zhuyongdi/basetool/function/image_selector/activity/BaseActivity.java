@@ -21,7 +21,7 @@ public class BaseActivity extends Activity {
     }
 
     public void setTxtStatusBar() {
-        ScreenTool.setImmersiveStatusBarMode(this, findViewById(R.id.empty), 0xFFFFFFFF);
+        ScreenTool.setImmersiveStatusBarMode(this, findViewById(R.id.empty));
         ScreenTool.setStatusBarLightMode(this);
     }
 
