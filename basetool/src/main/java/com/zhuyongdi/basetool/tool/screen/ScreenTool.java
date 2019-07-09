@@ -175,10 +175,27 @@ public class ScreenTool {
      */
     public static void setImmersiveStatusBarModeOnlyViewMargin(View view) {
         if (view != null) {
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-                ((ViewGroup.MarginLayoutParams) layoutParams).topMargin += getStatusBarHeight(view.getContext());
-                view.setLayoutParams(layoutParams);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
+                    ((ViewGroup.MarginLayoutParams) layoutParams).topMargin += getStatusBarHeight(view.getContext());
+                    view.setLayoutParams(layoutParams);
+                }
+            }
+        }
+    }
+
+    /**
+     * 设置沉浸式状态栏,仅仅设置view的paddingTop
+     */
+    public static void setImmersiveStatusBarModeOnlyViewPadding(View view) {
+        if (view != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                int paddingTop = view.getPaddingTop();
+                int paddingBottom = view.getPaddingBottom();
+                int paddingLeft = view.getPaddingLeft();
+                int paddingRight = view.getPaddingRight();
+                view.setPadding(paddingLeft, paddingTop + getStatusBarHeight(view.getContext()), paddingRight, paddingBottom);
             }
         }
     }
