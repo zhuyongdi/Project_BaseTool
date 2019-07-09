@@ -129,13 +129,13 @@ public class ScreenTool {
     /**
      * 设置沉浸式状态栏,即首先设置全屏,再设置指定view的marginTop为状态栏的高度,防止布局与状态栏重叠。
      */
-    public static void setImmersiveStatusBarMode(Activity activity, View view, int statusBarViewColor) {
+    public static void setImmersiveStatusBarMode(Activity activity, View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             if (activity != null) {
                 setImmersiveStatusBarModeOnlyFullScreen(activity);
             }
             if (view != null) {
-                setImmersiveStatusBarModeOnlyViewMargin(view, statusBarViewColor);
+                setImmersiveStatusBarModeOnlyViewMargin(view);
             }
         }
     }
@@ -155,9 +155,8 @@ public class ScreenTool {
     /**
      * 设置沉浸式状态栏,仅仅设置view的margin
      */
-    public static void setImmersiveStatusBarModeOnlyViewMargin(View view, int statusBarViewColor) {
+    public static void setImmersiveStatusBarModeOnlyViewMargin(View view) {
         if (view != null) {
-            view.setBackgroundColor(statusBarViewColor);
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
                 ((ViewGroup.MarginLayoutParams) layoutParams).topMargin += getStatusBarHeight(view.getContext());
