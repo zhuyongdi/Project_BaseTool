@@ -13,24 +13,40 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <!-- activity进出场动画_平移 -->
-    <style name="activity_animation_translate" parent="@android:style/Animation.Activity">
+    <!-- activity进出场动画_平移_300 -->
+    <style name="activity_animation_translate_300" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">
-            @anim/activity_animation_translate_open_enter
+            @anim/activity_animation_translate_open_enter_300
         </item>
         <item name="android:activityOpenExitAnimation">
-            @anim/activity_animation_translate_open_exit
+            @anim/activity_animation_translate_open_exit_300
         </item>
         <item name="android:activityCloseEnterAnimation">
-            @anim/activity_animation_translate_close_enter
+            @anim/activity_animation_translate_close_enter_300
         </item>
         <item name="android:activityCloseExitAnimation">
-            @anim/activity_animation_translate_close_exit
+            @anim/activity_animation_translate_close_exit_300
         </item>
     </style>
 
-    <!-- activity进出场动画_平移 -->
-    <style name="activity_animation_fade" parent="@android:style/Animation.Activity">
+    <!-- activity进出场动画_平移_300 -->
+    <style name="activity_animation_translate_250" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">
+            @anim/activity_animation_translate_open_enter_250
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/activity_animation_translate_open_exit_250
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/activity_animation_translate_close_enter_250
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/activity_animation_translate_close_exit_250
+        </item>
+    </style>
+
+    <!-- activity进出场动画_平移_300 -->
+    <style name="activity_animation_fade_300" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">
             @anim/activity_animation_fade_open_enter_close_enter
         </item>
@@ -126,6 +142,14 @@
         <attr name="RSShadowOffsetX" format="dimension" />
         <attr name="RSShadowOffsetY" format="dimension" />
         <attr name="RSShadowColor" format="color" />
+    </declare-styleable>
+
+    <!-- 圆形ImageView -->
+    <declare-styleable name="ZYDCircleImageView">
+        <attr name="zyd_civ_border_width" format="dimension" />
+        <attr name="zyd_civ_border_color" format="color" />
+        <attr name="zyd_civ_border_overlay" format="boolean" />
+        <attr name="zyd_civ_circle_background_color" format="color" />
     </declare-styleable>
 
     <!-- 自定义可拖动进度条 -->
