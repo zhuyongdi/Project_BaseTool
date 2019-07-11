@@ -1,28 +1,28 @@
-package com.zhuyongdi.basetool.widget;
+package com.zhuyongdi.basetool.widget.max_height;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.widget.ScrollView;
 
 /**
- * 可设置最大高度的RecyclerView
+ * 可设置最大高度的ScrollView
  * Created by Administrator on 2018/12/18.
  */
 
-public class MaxHeightRecyclerView extends RecyclerView {
+public class MaxHeightScrollView extends ScrollView {
 
     private int maxHeight;
 
-    public MaxHeightRecyclerView(Context context) {
+    public MaxHeightScrollView(Context context) {
         super(context);
     }
 
-    public MaxHeightRecyclerView(Context context, AttributeSet attrs) {
+    public MaxHeightScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MaxHeightRecyclerView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MaxHeightScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
