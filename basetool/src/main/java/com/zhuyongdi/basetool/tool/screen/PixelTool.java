@@ -15,7 +15,7 @@ public class PixelTool {
     }
 
     //px转px
-    public static int dp2Px(float scale, float dpValue) {
+    public static int dp2px(float scale, float dpValue) {
         return (int) (dpValue * scale + 0.5f);
     }
 

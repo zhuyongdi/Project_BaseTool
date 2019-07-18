@@ -2,11 +2,14 @@ package com.zhuyongdi.basetool.tool;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 
 import com.zhuyongdi.basetool.tool.string.ZYDStringTool;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +37,41 @@ public class ZYDActivityTool {
             }
         }
         return null;
+    }
+
+    /**
+     * 获取AndroidManifest中所有的Activity
+     *
+     * @param context          context
+     * @param activityNameType 1.MainActivity 2.xx.xx.MainActivity
+     */
+    public static ArrayList<String> obtainAllActivitiesInManifest(Context context, int activityNameType) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_ACTIVITIES);
+            if (packageInfo.activities != null && packageInfo.activities.length != 0) {
+                ArrayList<String> activityStringList = new ArrayList<>();
+                for (int i = 0, size = packageInfo.activities.length; i < size; i++) {
+                    ActivityInfo activityInfo = packageInfo.activities[i];
+                    String activityFullName = activityInfo.name;
+                    switch (activityNameType) {
+                        case 1:
+                            activityStringList.add(obtainActivityName(activityFullName));
+                            break;
+                        case 2:
+                            activityStringList.add(activityFullName);
+                            break;
+                    }
+                }
+                return activityStringList;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static String obtainActivityName(String fullName) {
+        return fullName.substring(fullName.lastIndexOf(".") + 1, fullName.length());
     }
 
 }

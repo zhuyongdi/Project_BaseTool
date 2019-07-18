@@ -41,4 +41,7 @@
     <dimen name="shifting_max_width_inactive">96dp</dimen>
     <dimen name="shifting_min_width_inactive">64dp</dimen>
 
+    <!-- CardView -->
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+
 </resources>
