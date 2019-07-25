@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zhuyongdi.basetool.function.screen_adaption;
+package com.zhuyongdi.basetool.function.screen_adaption_ctx;
 
 import android.app.Activity;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
-import com.zhuyongdi.basetool.function.screen_adaption.external.ExternalAdaptInfo;
-import com.zhuyongdi.basetool.function.screen_adaption.external.ExternalAdaptManager;
-import com.zhuyongdi.basetool.function.screen_adaption.internal.CustomAdapt;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.Preconditions;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.external.ExternalAdaptInfo;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.external.ExternalAdaptManager;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.internal.CustomAdapt;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.utils.Preconditions;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

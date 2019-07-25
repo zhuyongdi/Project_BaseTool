@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zhuyongdi.basetool.function.screen_adaption;
+package com.zhuyongdi.basetool.function.screen_adaption_ctx;
 
 import android.app.Activity;
 import android.app.Application;
 
-import com.zhuyongdi.basetool.function.screen_adaption.external.ExternalAdaptInfo;
-import com.zhuyongdi.basetool.function.screen_adaption.internal.CancelAdapt;
-import com.zhuyongdi.basetool.function.screen_adaption.internal.CustomAdapt;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.LogUtils;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.external.ExternalAdaptInfo;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.internal.CancelAdapt;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.internal.CustomAdapt;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.utils.LogUtils;
 
 import java.util.Locale;
 

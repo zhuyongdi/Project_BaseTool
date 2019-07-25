@@ -6,7 +6,7 @@ import android.util.Log;
  * Log工具类
  * Created by Administrator on 2019/3/18.
  */
-public class ZYD_Logger {
+public final class ZYD_Logger {
 
     private static boolean isDebug;
 

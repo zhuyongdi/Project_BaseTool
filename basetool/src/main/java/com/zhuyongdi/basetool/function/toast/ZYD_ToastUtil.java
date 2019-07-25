@@ -13,7 +13,7 @@ import android.widget.Toast;
  * Created by ZhuYongdi on 2019/3/18.
  */
 @SuppressLint({"StaticFieldLeak", "ShowToast"})
-public class ZYD_ToastUtil {
+public final class ZYD_ToastUtil {
 
     private static Context context;
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zhuyongdi.basetool.function.screen_adaption;
+package com.zhuyongdi.basetool.function.screen_adaption_ctx;
 
 import android.app.Activity;
 import android.app.Application;
@@ -26,11 +26,11 @@ import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 
-import com.zhuyongdi.basetool.function.screen_adaption.external.ExternalAdaptManager;
-import com.zhuyongdi.basetool.function.screen_adaption.unit.UnitsManager;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.LogUtils;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.Preconditions;
-import com.zhuyongdi.basetool.function.screen_adaption.utils.ScreenUtils;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.external.ExternalAdaptManager;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.unit.UnitsManager;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.utils.LogUtils;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.utils.Preconditions;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.utils.ScreenUtils;
 
 import java.lang.reflect.Field;
 

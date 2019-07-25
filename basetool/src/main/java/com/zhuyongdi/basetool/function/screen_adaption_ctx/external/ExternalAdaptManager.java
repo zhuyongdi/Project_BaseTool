@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zhuyongdi.basetool.function.screen_adaption.external;
+package com.zhuyongdi.basetool.function.screen_adaption_ctx.external;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 
-import com.zhuyongdi.basetool.function.screen_adaption.utils.Preconditions;
+import com.zhuyongdi.basetool.function.screen_adaption_ctx.utils.Preconditions;
 
 import java.util.ArrayList;
 import java.util.HashMap;

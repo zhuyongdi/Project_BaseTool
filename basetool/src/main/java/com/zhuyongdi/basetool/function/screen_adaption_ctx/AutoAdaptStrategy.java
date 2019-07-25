@@ -13,34 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zhuyongdi.basetool.function.screen_adaption;
+package com.zhuyongdi.basetool.function.screen_adaption_ctx;
 
 import android.app.Activity;
+import android.app.Application;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
 
 /**
  * ================================================
- * 屏幕适配监听器，用于监听屏幕适配时的一些事件
- * <p>
- * Created by JessYan on 2018/10/30 16:29
+ * 屏幕适配逻辑策略类, 可通过 {@link AutoSizeConfig#init(Application, boolean, AutoAdaptStrategy)}
+ * 和 {@link AutoSizeConfig#setAutoAdaptStrategy(AutoAdaptStrategy)} 切换策略
+ *
+ * @see DefaultAutoAdaptStrategy
+ * Created by JessYan on 2018/8/9 15:13
  * <a href="mailto:jess.yan.effort@gmail.com">Contact me</a>
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-public interface onAdaptListener {
-    /**
-     * 在屏幕适配前调用
-     *
-     * @param target   需要屏幕适配的对象 (可能是 {@link Activity} 或者 {@link Fragment})
-     * @param activity 当前 {@link Activity}
-     */
-    void onAdaptBefore(Object target, Activity activity);
+public interface AutoAdaptStrategy {
 
     /**
-     * 在屏幕适配后调用
+     * 开始执行屏幕适配逻辑
      *
      * @param target   需要屏幕适配的对象 (可能是 {@link Activity} 或者 {@link Fragment})
-     * @param activity 当前 {@link Activity}
+     * @param activity 需要拿到当前的 {@link Activity} 才能修改 {@link DisplayMetrics#density}
      */
-    void onAdaptAfter(Object target, Activity activity);
+    void applyAdapt(Object target, Activity activity);
 }

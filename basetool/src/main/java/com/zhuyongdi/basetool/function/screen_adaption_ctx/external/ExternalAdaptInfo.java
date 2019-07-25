@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zhuyongdi.basetool.function.screen_adaption.external;
+package com.zhuyongdi.basetool.function.screen_adaption_ctx.external;
 
 import android.app.Activity;
 import android.os.Parcel;
