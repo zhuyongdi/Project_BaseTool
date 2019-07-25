@@ -1,6 +1,6 @@
 package com.zhuyongdi.basetool.tool;
 
-public class ZYDClassTool {
+public class ZYD_ClassTool {
 
     /**
      * 获取类的完整名

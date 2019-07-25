@@ -179,6 +179,13 @@
         <attr name="common_indicator_size" format="integer" />
     </declare-styleable>
 
+    <!-- 指示器 -->
+    <declare-styleable name="ZYDSimpleBanner">
+        <attr name="zyd_simple_banner_is_auto_slide" format="boolean" />
+        <attr name="zyd_simple_banner_auto_slide_interval" format="integer" />
+        <attr name="zyd_simple_banner_auto_slide_duration" format="integer" />
+    </declare-styleable>
+
     <!-- CardView -->
     <attr name="cardViewStyle" format="reference" />
 

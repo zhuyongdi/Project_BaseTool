@@ -14,8 +14,7 @@ import android.widget.TextView;
 import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaBean;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaType;
-import com.zhuyongdi.basetool.function.screen_adaption.ScreenAdapterTools;
-import com.zhuyongdi.basetool.tool.ZYDListUtil;
+import com.zhuyongdi.basetool.tool.ZYD_ListUtil;
 import com.zhuyongdi.basetool.tool.RandomUtil;
 import com.zhuyongdi.basetool.tool.screen.ScreenTool;
 
@@ -65,14 +64,13 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return ZYDListUtil.size(list);
+        return ZYD_ListUtil.size(list);
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int type) {
         View itemView = inflater.inflate(R.layout.item_select_image, parent, false);
-        ScreenAdapterTools.getInstance().loadView(itemView);
         return new ViewHolder(itemView);
     }
 

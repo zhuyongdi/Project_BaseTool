@@ -6,7 +6,7 @@ import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.permission.Action;
 import com.zhuyongdi.basetool.function.permission.AndPermission;
 import com.zhuyongdi.basetool.function.permission.Permission;
-import com.zhuyongdi.basetool.function.toast.Toaster;
+import com.zhuyongdi.basetool.function.toast.ZYD_ToastUtil;
 import com.zhuyongdi.basetool.tool.screen.ScreenTool;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 public class BaseActivity extends Activity {
 
     public void showToast(String toast) {
-        Toaster.showToast(toast);
+        ZYD_ToastUtil.showToast(toast);
     }
 
     public void setTxtStatusBar() {

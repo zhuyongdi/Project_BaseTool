@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.function.screen_adaption.ScreenAdapterTools;
+import com.zhuyongdi.basetool.tool.screen.PixelTool;
 
 /**
  * 加载提示框
@@ -28,11 +28,10 @@ public class LoadingDialog extends Dialog {
     public LoadingDialog(Context context) {
         super(context, R.style.DialogStyle_BgDark);
         view = LayoutInflater.from(context).inflate(R.layout.dialog_loading, null);
-        ScreenAdapterTools.getInstance().loadView(view);
         setCanceledOnTouchOutside(false);
         Window window = getWindow();
         window.setContentView(view);
-        int dialogWidthAndHeight = ScreenAdapterTools.getInstance().getValue(220);
+        int dialogWidthAndHeight = PixelTool.dp2px(context, 220);
         window.setLayout(dialogWidthAndHeight, dialogWidthAndHeight);
         window.setGravity(Gravity.CENTER);
         window.setBackgroundDrawableResource(android.R.color.transparent);

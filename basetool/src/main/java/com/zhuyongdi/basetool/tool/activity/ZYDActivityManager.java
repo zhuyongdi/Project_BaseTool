@@ -3,9 +3,9 @@ package com.zhuyongdi.basetool.tool.activity;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.zhuyongdi.basetool.tool.ZYDActivityTool;
-import com.zhuyongdi.basetool.tool.ZYDClassTool;
-import com.zhuyongdi.basetool.tool.ZYDReflectUtil;
+import com.zhuyongdi.basetool.tool.ZYD_ActivityTool;
+import com.zhuyongdi.basetool.tool.ZYD_ClassTool;
+import com.zhuyongdi.basetool.tool.ZYD_ReflectUtil;
 
 import java.util.Stack;
 
@@ -35,11 +35,11 @@ public class ZYDActivityManager {
      */
     public void startFirstActivityWhenApplicationRestart(Activity activity) {
         if (activity != null) {
-            final String startActivityFullName = ZYDActivityTool.obtainStartActivityName(activity);
+            final String startActivityFullName = ZYD_ActivityTool.obtainStartActivityName(activity);
             if (!activityStack.isEmpty()) {
-                String realFirstActivityFullName = ZYDClassTool.getClassFullName(activityStack.get(0).getClass());
+                String realFirstActivityFullName = ZYD_ClassTool.getClassFullName(activityStack.get(0).getClass());
                 if (!realFirstActivityFullName.equals(startActivityFullName)) {
-                    Class c = ZYDReflectUtil.reflectClassByClassName(realFirstActivityFullName);
+                    Class c = ZYD_ReflectUtil.reflectClassByClassName(realFirstActivityFullName);
                     activity.startActivity(new Intent(activity, c));
                     activity.finish();
                 }

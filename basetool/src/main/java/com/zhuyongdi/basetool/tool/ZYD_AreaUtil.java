@@ -2,7 +2,7 @@ package com.zhuyongdi.basetool.tool;
 
 import com.zhuyongdi.basetool.constants.ChinaAreaString;
 
-public class ZYDAreaUtil {
+public class ZYD_AreaUtil {
 
     /**
      * 是否市直辖市

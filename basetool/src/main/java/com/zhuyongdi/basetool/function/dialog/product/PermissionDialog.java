@@ -11,7 +11,6 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.function.screen_adaption.ScreenAdapterTools;
 
 /**
  * 权限提示框
@@ -29,7 +28,6 @@ public class PermissionDialog extends Dialog implements View.OnClickListener {
     public PermissionDialog(@NonNull Context context) {
         super(context, R.style.DialogStyle_BgDark);
         view = LayoutInflater.from(context).inflate(R.layout.dialog_permission, null);
-        ScreenAdapterTools.getInstance().loadView(view);
         setCanceledOnTouchOutside(false);
         Window window = getWindow();
         window.setContentView(view);

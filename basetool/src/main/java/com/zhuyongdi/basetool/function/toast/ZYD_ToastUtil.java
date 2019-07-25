@@ -13,24 +13,18 @@ import android.widget.Toast;
  * Created by ZhuYongdi on 2019/3/18.
  */
 @SuppressLint({"StaticFieldLeak", "ShowToast"})
-public class Toaster {
+public class ZYD_ToastUtil {
 
-    private static final String TAG = "Toaster";
-    private static ContextHolder holder;
+    private static Context context;
 
-    public static void init(Context context) {
-        holder = new ContextHolder(context);
+    private ZYD_ToastUtil() {
     }
 
     public static void showToast(final int resId) {
-        if (holder == null) {
-            Log.e(TAG, "please register this in application");
-            return;
-        }
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @SuppressLint("ShowToast")
             public void run() {
-                Toast toast = Toast.makeText(holder.context, resId, Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(context, resId, Toast.LENGTH_SHORT);
                 toast.setText(resId);
                 toast.setGravity(Gravity.BOTTOM, 0, 100);
                 toast.show();
@@ -39,27 +33,14 @@ public class Toaster {
     }
 
     public static void showToast(final String text) {
-        if (holder == null) {
-            Log.e(TAG, "please register this in application");
-            return;
-        }
         new Handler(Looper.myLooper()).post(new Runnable() {
             public void run() {
-                Toast toast = Toast.makeText(holder.context, text, Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
                 toast.setText(text);
                 toast.setGravity(Gravity.BOTTOM, 0, 100);
                 toast.show();
             }
         });
-    }
-
-    private static final class ContextHolder {
-
-        private Context context;
-
-        private ContextHolder(Context context) {
-            this.context = context;
-        }
     }
 
 }

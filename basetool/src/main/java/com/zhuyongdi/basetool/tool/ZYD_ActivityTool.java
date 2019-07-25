@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Activity工具类
  */
-public class ZYDActivityTool {
+public class ZYD_ActivityTool {
 
     /**
      * 获取启动Activity的名称
