@@ -30,13 +30,18 @@ import android.net.Uri;
  * ================================================
  */
 public class InitProvider extends ContentProvider {
+
+    public static boolean AUTO_INIT = false;
+
     @Override
     public boolean onCreate() {
-        AutoSizeConfig.getInstance()
-                .setLog(true)
-                .init((Application) getContext().getApplicationContext())
-                .setUseDeviceSize(false);
-        return true;
+        if (AUTO_INIT) {
+            AutoSizeConfig.getInstance()
+                    .setLog(true)
+                    .init((Application) getContext().getApplicationContext())
+                    .setUseDeviceSize(false);
+        }
+        return AUTO_INIT;
     }
 
     @Override
