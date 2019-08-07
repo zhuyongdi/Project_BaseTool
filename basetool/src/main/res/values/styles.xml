@@ -2,7 +2,7 @@
 <resources>
 
     <!-- PermissionActivity主题 -->
-    <style name="PermissionActivityTheme">
+    <style name="XXPermissionActivityTheme">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -14,366 +14,177 @@
     </style>
 
     <!-- activity进出场动画_平移_300 -->
-    <style name="activity_animation_translate_300" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">
-            @anim/activity_animation_translate_open_enter_300
-        </item>
-        <item name="android:activityOpenExitAnimation">
-            @anim/activity_animation_translate_open_exit_300
-        </item>
-        <item name="android:activityCloseEnterAnimation">
-            @anim/activity_animation_translate_close_enter_300
-        </item>
-        <item name="android:activityCloseExitAnimation">
-            @anim/activity_animation_translate_close_exit_300
-        </item>
+    <style name="xx_activity_animation_translate_300" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/xx_activity_animation_translate_open_enter_300</item>
+        <item name="android:activityOpenExitAnimation">@anim/xx_activity_animation_translate_open_exit_300</item>
+        <item name="android:activityCloseEnterAnimation">@anim/xx_activity_animation_translate_close_enter_300</item>
+        <item name="android:activityCloseExitAnimation">@anim/xx_activity_animation_translate_close_exit_300</item>
     </style>
 
     <!-- activity进出场动画_平移_300 -->
-    <style name="activity_animation_translate_250" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">
-            @anim/activity_animation_translate_open_enter_250
-        </item>
-        <item name="android:activityOpenExitAnimation">
-            @anim/activity_animation_translate_open_exit_250
-        </item>
-        <item name="android:activityCloseEnterAnimation">
-            @anim/activity_animation_translate_close_enter_250
-        </item>
-        <item name="android:activityCloseExitAnimation">
-            @anim/activity_animation_translate_close_exit_250
-        </item>
+    <style name="xx_activity_animation_translate_250" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/xx_activity_animation_translate_open_enter_250</item>
+        <item name="android:activityOpenExitAnimation">@anim/xx_activity_animation_translate_open_exit_250</item>
+        <item name="android:activityCloseEnterAnimation">@anim/xx_activity_animation_translate_close_enter_250</item>
+        <item name="android:activityCloseExitAnimation">@anim/xx_activity_animation_translate_close_exit_250</item>
     </style>
 
     <!-- activity进出场动画_平移_300 -->
-    <style name="activity_animation_fade_300" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">
-            @anim/activity_animation_fade_open_enter_close_enter
-        </item>
-        <item name="android:activityOpenExitAnimation">
-            @anim/activity_animation_fade_open_exit_close_exit
-        </item>
-        <item name="android:activityCloseEnterAnimation">
-            @anim/activity_animation_fade_open_enter_close_enter
-        </item>
-        <item name="android:activityCloseExitAnimation">
-            @anim/activity_animation_fade_open_exit_close_exit
-        </item>
+    <style name="xx_activity_animation_fade_300" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/xx_activity_animation_fade_open_enter_close_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/xx_activity_animation_fade_open_exit_close_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/xx_activity_animation_fade_open_enter_close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/xx_activity_animation_fade_open_exit_close_exit</item>
     </style>
 
-    <!-- Dialog主题,背景变暗 -->
-    <style name="DialogStyle_BgDark" parent="android:style/Theme.Dialog">
+    <!-- Dialog主题,基类-->
+    <style name="XXBaseDialogStyle" parent="android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <!-- Dialog主题,背景变暗 -->
+    <style name="XXDialogStyleBgDark" parent="XXBaseDialogStyle">
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
     <!-- Dialog主题,背景不变暗 -->
-    <style name="DialogStyle_BgNotDark" parent="android:style/Theme.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowFullscreen">false</item>
+    <style name="XXDialogStyleBgNotDark" parent="XXBaseDialogStyle">
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <!-- AndPermission -->
-    <style name="permission_PermissionActivity" parent="@android:style/Theme.Translucent.NoTitleBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowDisablePreview">true</item>
-    </style>
+    <!--&lt;!&ndash; AndPermission &ndash;&gt;-->
+    <!--<style name="permission_PermissionActivity" parent="@android:style/Theme.Translucent.NoTitleBar">-->
+        <!--<item name="android:windowActionBar">false</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:windowDisablePreview">true</item>-->
+    <!--</style>-->
 
     <!-- BottomNavigation -->
-    <style name="BadgeText" parent="TextAppearance.AppCompat.Body2">
-        <item name="android:textSize">@dimen/badge_text_size</item>
+    <style name="XXBadgeText" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textSize">@dimen/xx_badge_text_size</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:maxLines">1</item>
-        <item name="android:layout_marginTop">@dimen/badge_top_margin</item>
-        <item name="android:paddingRight">@dimen/badge_width_padding</item>
-        <item name="android:paddingLeft">@dimen/badge_width_padding</item>
-        <item name="android:paddingBottom">@dimen/badge_height_padding</item>
-        <item name="android:paddingTop">@dimen/badge_height_padding</item>
+        <item name="android:layout_marginTop">@dimen/xx_badge_top_margin</item>
+        <item name="android:paddingRight">@dimen/xx_badge_width_padding</item>
+        <item name="android:paddingLeft">@dimen/xx_badge_width_padding</item>
+        <item name="android:paddingBottom">@dimen/xx_badge_height_padding</item>
+        <item name="android:paddingTop">@dimen/xx_badge_height_padding</item>
         <item name="android:visibility">gone</item>
     </style>
-
-    <declare-styleable name="BottomNavigationBar">
-        <attr name="bnbElevation" format="dimension" />
-        <attr name="bnbActiveColor" format="color" />
-        <attr name="bnbInactiveColor" format="color" />
-        <attr name="bnbBackgroundColor" format="color" />
-        <attr name="bnbAnimationDuration" format="integer" />
-        <attr name="bnbMode" format="enum">
-            <enum name="mode_default" value="0" />
-            <enum name="mode_fixed" value="1" />
-            <enum name="mode_shifting" value="2" />
-            <enum name="mode_fixed_no_title" value="3" />
-            <enum name="mode_shifting_no_title" value="4" />
+    <declare-styleable name="XXBottomNavigationBar">
+        <attr name="xx_bottom_navigation_bard_bnb_elevation" format="dimension" />
+        <attr name="xx_bottom_navigation_bard_bnb_active_color" format="color" />
+        <attr name="xx_bottom_navigation_bard_bnb_inactive_color" format="color" />
+        <attr name="xx_bottom_navigation_bard_bnb_background_color" format="color" />
+        <attr name="xx_bottom_navigation_bard_bnb_animation_duration" format="integer" />
+        <attr name="xx_bottom_navigation_bard_bnb_mode" format="enum">
+            <enum name="xx_bottom_navigation_bard_mode_default" value="0" />
+            <enum name="xx_bottom_navigation_bard_mode_fixed" value="1" />
+            <enum name="xx_bottom_navigation_bard_mode_shifting" value="2" />
+            <enum name="xx_bottom_navigation_bard_mode_fixed_no_title" value="3" />
+            <enum name="xx_bottom_navigation_bard_mode_shifting_no_title" value="4" />
         </attr>
-        <attr name="bnbBackgroundStyle" format="enum">
-            <enum name="background_style_default" value="0" />
-            <enum name="background_style_static" value="1" />
-            <enum name="background_style_ripple" value="2" />
+        <attr name="xx_bottom_navigation_bard_bnb_background_style" format="enum">
+            <enum name="xx_bottom_navigation_bard_background_style_default" value="0" />
+            <enum name="xx_bottom_navigation_bard_background_style_static" value="1" />
+            <enum name="xx_bottom_navigation_bard_background_style_ripple" value="2" />
         </attr>
-        <attr name="bnbAutoHideEnabled" format="boolean" />
+        <attr name="xx_bottom_navigation_bard_bnb_auto_hide_enabled" format="boolean" />
     </declare-styleable>
 
     <!-- 微信九宫格控件 -->
-    <declare-styleable name="XNineGridView">
-        <attr name="XNineGridView_MaxSize" format="integer" />
-        <attr name="XNineGridView_Spacing" format="dimension" />
-        <attr name="XNineGridView_SingleMinWidth" format="float" />
-        <attr name="XNineGridView_SingleMaxWidth" format="float" />
+    <declare-styleable name="XXNineGridView">
+        <attr name="xx_nine_grid_view_max_size" format="integer" />
+        <attr name="xx_nine_grid_view_spacing" format="dimension" />
+        <attr name="xx_nine_grid_view_single_min_width" format="float" />
+        <attr name="xx_nine_grid_view_single_max_width" format="float" />
     </declare-styleable>
 
     <!-- 阴影圆角Layout -->
-    <declare-styleable name="RSLayout">
-        <attr name="RSLayoutLeftTopRadius" format="dimension" />
-        <attr name="RSLayoutLeftBottomRadius" format="dimension" />
-        <attr name="RSLayoutRightTopRadius" format="dimension" />
-        <attr name="RSLayoutRightBottomRadius" format="dimension" />
-        <attr name="RSLayoutRadius" format="dimension" />
-        <attr name="RSStrokeWidth" format="dimension" />
-        <attr name="RSStrokeColor" format="color" />
-        <attr name="RSShadowWidth" format="dimension" />
-        <attr name="RSShadowOffsetX" format="dimension" />
-        <attr name="RSShadowOffsetY" format="dimension" />
-        <attr name="RSShadowColor" format="color" />
+    <declare-styleable name="XXRSLayout">
+        <attr name="xx_rs_radius_left_top" format="dimension" />
+        <attr name="xx_rs_radius_left_bottom" format="dimension" />
+        <attr name="xx_rs_radius_right_top" format="dimension" />
+        <attr name="xx_rs_radius_right_bottom" format="dimension" />
+        <attr name="xx_rs_radius" format="dimension" />
+        <attr name="xx_rs_stroke_width" format="dimension" />
+        <attr name="xx_rs_stroke_color" format="color" />
+        <attr name="xx_rs_shadow_width" format="dimension" />
+        <attr name="xx_rs_shadow_offset_x" format="dimension" />
+        <attr name="xx_rs_shadow_offset_y" format="dimension" />
+        <attr name="xx_rs_shadow_color" format="color" />
     </declare-styleable>
 
     <!-- 圆形ImageView -->
-    <declare-styleable name="ZYDCircleImageView">
-        <attr name="zyd_civ_border_width" format="dimension" />
-        <attr name="zyd_civ_border_color" format="color" />
-        <attr name="zyd_civ_border_overlay" format="boolean" />
-        <attr name="zyd_civ_circle_background_color" format="color" />
+    <declare-styleable name="XXCircleImageView">
+        <attr name="xx_circle_image_view_border_width" format="dimension" />
+        <attr name="xx_circle_image_view_border_color" format="color" />
+        <attr name="xx_circle_image_view_border_overlay" format="boolean" />
+        <attr name="xx_circle_image_view_circle_background_color" format="color" />
     </declare-styleable>
 
-    <!-- 自定义可拖动进度条 -->
-    <declare-styleable name="CustomSeekBar">
-        <attr name="custom_seek_bar_progress_height" format="dimension" />
-        <attr name="custom_seek_bar_progress_color_normal" format="color" />
-        <attr name="custom_seek_bar_progress_color_select" format="color" />
-        <attr name="custom_seek_bar_progress_radius" format="dimension" />
-        <attr name="custom_seek_bar_circle_diameter" format="dimension" />
-        <attr name="custom_seek_bar_circle_color" format="color" />
-        <attr name="custom_seek_bar_circle_diameter_select" format="dimension" />
-        <attr name="custom_seek_bar_circle_color_select" format="color" />
-        <attr name="custom_seek_bar_ripple_diameter" format="dimension" />
-        <attr name="custom_seek_bar_ripple_color" format="color" />
-        <attr name="custom_seek_bar_max" format="integer" />
-        <attr name="custom_seek_bar_ripple_enable" format="boolean" />
-        <attr name="custom_seek_bar_progress" format="integer" />
-    </declare-styleable>
-
-    <!-- 指示器 -->
-    <declare-styleable name="CommonIndicator">
-        <attr name="common_indicator_select_width" format="dimension" />
-        <attr name="common_indicator_unselect_width" format="dimension" />
-        <attr name="common_indicator_select_color" format="color" />
-        <attr name="common_indicator_unselect_color" format="color" />
-        <attr name="common_indicator_padding" format="dimension" />
-        <attr name="common_indicator_size" format="integer" />
+    <!-- 圆角ImageView -->
+    <declare-styleable name="XXRoundImageView">
+        <attr name="xx_round_image_view_corner_radius" />
+        <attr name="xx_round_image_view_corner_radius_top_left" />
+        <attr name="xx_round_image_view_corner_radius_top_right" />
+        <attr name="xx_round_image_view_corner_radius_bottom_left" />
+        <attr name="xx_round_image_view_corner_radius_bottom_right" />
+        <attr name="xx_round_image_view_icon_src_normal" />
+        <attr name="xx_round_image_view_icon_src_pressed" />
+        <attr name="xx_round_image_view_icon_src_unable" />
+        <attr name="xx_round_image_view_border_width" format="dimension" />
+        <attr name="xx_round_image_view_border_color" format="color" />
+        <attr name="xx_round_image_view_is_circle" format="boolean" />
+        <attr name="xx_round_image_view_enabled" />
+        <attr name="android:scaleType" />
     </declare-styleable>
 
     <!-- 指示器 -->
-    <declare-styleable name="ZYDSimpleBanner">
-        <attr name="zyd_simple_banner_is_auto_slide" format="boolean" />
-        <attr name="zyd_simple_banner_auto_slide_interval" format="integer" />
-        <attr name="zyd_simple_banner_auto_slide_duration" format="integer" />
+    <declare-styleable name="XXCommonIndicator">
+        <attr name="xx_common_indicator_select_width" format="dimension" />
+        <attr name="xx_common_indicator_unselect_width" format="dimension" />
+        <attr name="xx_common_indicator_select_color" format="color" />
+        <attr name="xx_common_indicator_unselect_color" format="color" />
+        <attr name="xx_common_indicator_padding" format="dimension" />
+        <attr name="xx_common_indicator_size" format="integer" />
+    </declare-styleable>
+
+    <!-- 轮播图 -->
+    <declare-styleable name="XXSimpleBanner">
+        <attr name="xx_simple_banner_is_auto_slide" format="boolean" />
+        <attr name="xx_simple_banner_auto_slide_interval" format="integer" />
+        <attr name="xx_simple_banner_auto_slide_duration" format="integer" />
     </declare-styleable>
 
     <!-- CardView -->
-    <attr name="cardViewStyle" format="reference" />
-
-    <style name="Base.CardView" parent="android:Widget">
-        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
-        <item name="cardElevation">@dimen/cardview_default_elevation</item>
-        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
-        <item name="cardUseCompatPadding">false</item>
-        <item name="cardPreventCornerOverlap">true</item>
+    <style name="Base.XXCardView" parent="android:Widget">
+        <item name="xx_card_view_card_corner_radius">@dimen/xx_card_view_default_radius</item>
+        <item name="xx_card_view_card_elevation">@dimen/xx_card_view_default_elevation</item>
+        <item name="xx_card_view_card_max_elevation">@dimen/xx_card_view_default_elevation</item>
+        <item name="xx_card_view_card_use_compat_padding">false</item>
+        <item name="xx_card_view_card_prevent_corner_overlap">true</item>
     </style>
-
-    <style name="CardView" parent="Base.CardView" />
-
-    <declare-styleable name="CardView">
-        <attr name="cardBackgroundColor" format="color" />
-        <attr name="cardCornerRadius" format="dimension" />
-        <attr name="cardElevation" format="dimension" />
-        <attr name="cardMaxElevation" format="dimension" />
-        <attr name="cardUseCompatPadding" format="boolean" />
-        <attr name="cardPreventCornerOverlap" format="boolean" />
-        <attr name="contentPadding" format="dimension" />
-        <attr name="contentPaddingLeft" format="dimension" />
-        <attr name="contentPaddingRight" format="dimension" />
-        <attr name="contentPaddingTop" format="dimension" />
-        <attr name="contentPaddingBottom" format="dimension" />
+    <style name="XXCardView" parent="Base.XXCardView" />
+    <attr name="XXCardViewStyle" format="reference" />
+    <declare-styleable name="XXCardView">
+        <attr name="xx_card_view_card_background_color" format="color" />
+        <attr name="xx_card_view_card_corner_radius" format="dimension" />
+        <attr name="xx_card_view_card_elevation" format="dimension" />
+        <attr name="xx_card_view_card_max_elevation" format="dimension" />
+        <attr name="xx_card_view_card_use_compat_padding" format="boolean" />
+        <attr name="xx_card_view_card_prevent_corner_overlap" format="boolean" />
+        <attr name="xx_card_view_content_padding" format="dimension" />
+        <attr name="xx_card_view_content_padding_left" format="dimension" />
+        <attr name="xx_card_view_content_padding_right" format="dimension" />
+        <attr name="xx_card_view_content_padding_top" format="dimension" />
+        <attr name="xx_card_view_content_padding_bottom" format="dimension" />
         <attr name="android:minWidth" />
         <attr name="android:minHeight" />
-    </declare-styleable>
-
-    <!-- SmartRefresh -->
-    <declare-styleable name="BallPulseFooter">
-        <attr name="srlClassicsSpinnerStyle" />
-        <attr name="srlAnimatingColor" format="color" />
-        <attr name="srlNormalColor" format="color" />
-    </declare-styleable>
-    <declare-styleable name="BezierRadarHeader">
-        <attr name="srlPrimaryColor" />
-        <attr name="srlAccentColor" />
-        <attr name="srlEnableHorizontalDrag" />
-    </declare-styleable>
-    <declare-styleable name="ClassicsFooter">
-        <attr name="srlClassicsSpinnerStyle" />
-        <attr name="srlPrimaryColor" />
-        <attr name="srlAccentColor" />
-        <attr name="srlFinishDuration" />
-        <attr name="srlTextSizeTitle" />
-        <attr name="srlDrawableArrow" />
-        <attr name="srlDrawableProgress" />
-        <attr name="srlDrawableMarginRight" />
-        <attr name="srlDrawableSize" />
-        <attr name="srlDrawableArrowSize" />
-        <attr name="srlDrawableProgressSize" />
-        <attr name="srlTextPulling" />
-        <attr name="srlTextRelease" />
-        <attr name="srlTextLoading" />
-        <attr name="srlTextRefreshing" />
-        <attr name="srlTextFinish" />
-        <attr name="srlTextFailed" />
-        <attr name="srlTextNothing" />
-    </declare-styleable>
-    <declare-styleable name="ClassicsHeader">
-        <attr name="srlClassicsSpinnerStyle" />
-        <attr name="srlPrimaryColor" />
-        <attr name="srlAccentColor" />
-        <attr name="srlFinishDuration" />
-        <attr name="srlDrawableArrow" />
-        <attr name="srlDrawableProgress" />
-        <attr name="srlDrawableMarginRight" />
-        <attr name="srlDrawableSize" />
-        <attr name="srlDrawableArrowSize" />
-        <attr name="srlDrawableProgressSize" />
-        <attr name="srlTextSizeTitle" />
-        <attr name="srlTextSizeTime" />
-        <attr name="srlTextTimeMarginTop" format="dimension" />
-        <attr name="srlEnableLastTime" format="boolean" />
-        <attr name="srlTextPulling" />
-        <attr name="srlTextLoading" />
-        <attr name="srlTextRelease" />
-        <attr name="srlTextFinish" />
-        <attr name="srlTextFailed" />
-        <attr name="srlTextUpdate" />
-        <attr name="srlTextSecondary" />
-        <attr name="srlTextRefreshing" />
-    </declare-styleable>
-    <declare-styleable name="SmartRefreshLayout">
-        <attr name="srlPrimaryColor" />
-        <attr name="srlAccentColor" />
-        <attr name="srlReboundDuration" format="integer" />
-        <attr name="srlHeaderHeight" format="dimension" />
-        <attr name="srlFooterHeight" format="dimension" />
-        <attr name="srlHeaderInsetStart" format="dimension" />
-        <attr name="srlFooterInsetStart" format="dimension" />
-        <attr name="srlDragRate" format="float" />
-        <attr name="srlHeaderMaxDragRate" format="float" />
-        <attr name="srlFooterMaxDragRate" format="float" />
-        <attr name="srlHeaderTriggerRate" format="float" />
-        <attr name="srlFooterTriggerRate" format="float" />
-        <attr name="srlEnableRefresh" format="boolean" />
-        <attr name="srlEnableLoadMore" format="boolean" />
-        <attr name="srlEnableHeaderTranslationContent" format="boolean" />
-        <attr name="srlEnableFooterTranslationContent" format="boolean" />
-        <attr name="srlHeaderTranslationViewId" format="reference" />
-        <attr name="srlFooterTranslationViewId" format="reference" />
-        <attr name="srlEnablePreviewInEditMode" format="boolean" />
-        <attr name="srlEnableAutoLoadMore" format="boolean" />
-        <attr name="srlEnableOverScrollBounce" format="boolean" />
-        <attr name="srlEnablePureScrollMode" format="boolean" />
-        <attr name="srlEnableNestedScrolling" format="boolean" />
-        <attr name="srlEnableScrollContentWhenLoaded" format="boolean" />
-        <attr name="srlEnableScrollContentWhenRefreshed" format="boolean" />
-        <attr name="srlEnableLoadMoreWhenContentNotFull" format="boolean" />
-        <attr name="srlEnableFooterFollowWhenLoadFinished" format="boolean" />
-        <attr name="srlEnableFooterFollowWhenNoMoreData" format="boolean" />
-        <attr name="srlEnableClipHeaderWhenFixedBehind" format="boolean" />
-        <attr name="srlEnableClipFooterWhenFixedBehind" format="boolean" />
-        <attr name="srlEnableOverScrollDrag" format="boolean" />
-        <attr name="srlDisableContentWhenRefresh" format="boolean" />
-        <attr name="srlDisableContentWhenLoading" format="boolean" />
-        <attr name="srlFixedHeaderViewId" format="reference" />
-        <attr name="srlFixedFooterViewId" format="reference" />
-    </declare-styleable>
-    <declare-styleable name="SmartRefreshLayout_Layout">
-        <attr name="layout_srlSpinnerStyle" />
-        <attr name="layout_srlBackgroundColor" format="color" />
-    </declare-styleable>
-    <declare-styleable name="TwoLevelHeader">
-        <attr name="srlMaxRage" format="float" />
-        <attr name="srlFloorRage" format="float" />
-        <attr name="srlRefreshRage" format="float" />
-        <attr name="srlFloorDuration" format="integer" />
-        <attr name="srlEnableTwoLevel" format="boolean" />
-        <attr name="srlEnablePullToCloseTwoLevel" format="boolean" />
-    </declare-styleable>
-
-    <!-- SmartRefresh_Header -->
-    <declare-styleable name="DropBoxHeader">
-        <attr name="dhDrawable1" format="reference" />
-        <attr name="dhDrawable2" format="reference" />
-        <attr name="dhDrawable3" format="reference" />
-    </declare-styleable>
-    <declare-styleable name="FunGameHitBlockHeader">
-        <attr name="fghBlockHorizontalNum" format="integer" />
-        <attr name="fghBallSpeed" format="dimension" />
-    </declare-styleable>
-    <declare-styleable name="FunGameView">
-        <attr name="fghMaskTextTop" format="string" />
-        <attr name="fghMaskTextTopPull" format="string" />
-        <attr name="fghMaskTextTopRelease" format="string" />
-        <attr name="fghMaskTextBottom" format="string" />
-        <attr name="fghMaskTextSizeTop" format="dimension" />
-        <attr name="fghMaskTextSizeBottom" format="dimension" />
-        <attr name="fghBackColor" format="color" />
-        <attr name="fghLeftColor" format="color" />
-        <attr name="fghMiddleColor" format="color" />
-        <attr name="fghRightColor" format="color" />
-        <attr name="fghTextLoading" format="string" />
-        <attr name="fghTextLoadingFinished" format="string" />
-        <attr name="fghTextLoadingFailed" format="string" />
-        <attr name="fghTextGameOver" format="string" />
-    </declare-styleable>
-    <declare-styleable name="MaterialHeader">
-        <attr name="mhPrimaryColor" format="color" />
-        <attr name="mhShadowColor" format="color" />
-        <attr name="mhShadowRadius" format="dimension" />
-        <attr name="mhShowBezierWave" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="MountainSceneView">
-        <attr name="msvPrimaryColor" format="color" />
-        <attr name="msvViewportHeight" format="dimension" />
-    </declare-styleable>
-    <declare-styleable name="PhoenixHeader">
-        <attr name="phPrimaryColor" format="color" />
-        <attr name="phAccentColor" format="color" />
-    </declare-styleable>
-    <declare-styleable name="StoreHouseHeader">
-        <attr name="shhText" format="string" />
-        <attr name="shhLineWidth" format="dimension" />
-        <attr name="shhDropHeight" format="dimension" />
-        <attr name="shhEnableFadeAnimation" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="TaurusHeader">
-        <attr name="thPrimaryColor" format="color" />
-    </declare-styleable>
-    <declare-styleable name="WaveSwipeHeader">
-        <attr name="wshPrimaryColor" format="color" />
-        <attr name="wshAccentColor" format="color" />
-        <attr name="wshShadowColor" format="color" />
-        <attr name="wshShadowRadius" format="dimension" />
     </declare-styleable>
 
 </resources>

@@ -2,21 +2,21 @@
 <resources>
 
     <!-- BottomNavigation -->
-    <color name="text_color">#333333</color>
+    <color name="xx_text_color">#333333</color>
 
     <!-- 自定义颜色 -->
-    <color name="text_red">#FF8C68</color>
-    <color name="divider_title_bar">#c9c9c9</color>
-    <color name="white">#FFFFFF</color>
-    <color name="text_main_color">#333333</color>
-    <color name="text_color_second">#999999</color>
-    <color name="divider">#DEDEDE</color>
-    <color name="bg_color">#F6F6F6</color>
+    <color name="xx_text_red">#FF8C68</color>
+    <color name="xx_divider_title_bar">#c9c9c9</color>
+    <color name="xx_white">#FFFFFF</color>
+    <color name="xx_text_main_color">#333333</color>
+    <color name="xx_text_color_second">#999999</color>
+    <color name="xx_divider">#DEDEDE</color>
+    <color name="xx_bg_color">#F6F6F6</color>
 
     <!-- CardView -->
-    <color name="cardview_shadow_end_color">#03000000</color>
-    <color name="cardview_shadow_start_color">#37000000</color>
-    <color name="cardview_dark_background">#FF424242</color>
-    <color name="cardview_light_background">#FFFFFFFF</color>
+    <color name="xx_card_view_shadow_end_color">#03000000</color>
+    <color name="xx_card_view_shadow_start_color">#37000000</color>
+    <color name="xx_card_view_dark_background">#FF424242</color>
+    <color name="xx_card_view_light_background">#FFFFFFFF</color>
 
 </resources>

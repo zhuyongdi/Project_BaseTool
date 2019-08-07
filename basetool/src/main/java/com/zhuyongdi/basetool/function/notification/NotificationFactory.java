@@ -37,7 +37,7 @@ public class NotificationFactory {
                 //设置优先级
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置通知左侧的小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle("Messaging style notification")
                 //设置通知内容
@@ -56,10 +56,10 @@ public class NotificationFactory {
      * 创建Media通知
      */
     public static Notification createMedia(Context context, boolean isPlaying) {
-        Icon iconPlay = Icon.createWithResource(context, R.mipmap.icon_notification_music_play);
-        Icon iconPause = Icon.createWithResource(context, R.mipmap.icon_notification_music_pause);
-        Icon iconNext = Icon.createWithResource(context, R.mipmap.icon_notification_music_next);
-        Icon iconDelete = Icon.createWithResource(context, R.mipmap.icon_notification_music_delete);
+        Icon iconPlay = Icon.createWithResource(context, R.mipmap.xx_icon_notification_music_play);
+        Icon iconPause = Icon.createWithResource(context, R.mipmap.xx_icon_notification_music_pause);
+        Icon iconNext = Icon.createWithResource(context, R.mipmap.xx_icon_notification_music_next);
+        Icon iconDelete = Icon.createWithResource(context, R.mipmap.xx_icon_notification_music_delete);
         Icon iconPlayOrPause = isPlaying ? iconPause : iconPlay;
         String textPlayOrPause = isPlaying ? "PAUSE" : "PLAY";
         String textDelete = "DELETE";
@@ -83,7 +83,7 @@ public class NotificationFactory {
                 //设置优先级
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置通知左侧的小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle("Media style notification")
                 //设置通知内容
@@ -117,7 +117,7 @@ public class NotificationFactory {
                 //设置优先级
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置通知左侧的小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle(wrapper == null ? "" : wrapper.getTitle())
                 //设置通知内容
@@ -144,7 +144,7 @@ public class NotificationFactory {
                 //设置优先级
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置通知左侧的小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle(wrapper.getTitle())
                 //设置通知内容
@@ -172,7 +172,7 @@ public class NotificationFactory {
                 //设置优先级
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置通知左侧的小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle(wrapper.getTitle())
                 //设置通知内容
@@ -195,7 +195,7 @@ public class NotificationFactory {
                 //设置优先级
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置通知左侧的小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle(progress == 100 ? "下载完成" : "下载中...")
                 //设置通知内容
@@ -215,27 +215,27 @@ public class NotificationFactory {
      */
     public static Notification createMusicPlayer(Context context, NotificationMusicContentWrapper wrapper, boolean isLoved, boolean isPlaying) {
 
-        RemoteViews smallView = new RemoteViews(context.getPackageName(), R.layout.layout_notification_music_player_small);
+        RemoteViews smallView = new RemoteViews(context.getPackageName(), R.layout.xx_layout_notification_music_player_small);
         smallView.setImageViewBitmap(R.id.iv_content, wrapper.getMusicBitmap());
         smallView.setTextViewText(R.id.tv_title, wrapper.getMusicTitle());
         smallView.setTextViewText(R.id.tv_summery, wrapper.getMusicAuthor() + " - " + wrapper.getMusicAlbum());
         smallView.setImageViewBitmap(R.id.iv_play_or_pause, BitmapFactory.decodeResource(context.getResources(),
-                isPlaying ? R.mipmap.icon_notification_music_pause : R.mipmap.icon_notification_music_play));
+                isPlaying ? R.mipmap.xx_icon_notification_music_pause : R.mipmap.xx_icon_notification_music_play));
 
-        RemoteViews bigView = new RemoteViews(context.getPackageName(), R.layout.layout_notification_music_player_big);
+        RemoteViews bigView = new RemoteViews(context.getPackageName(), R.layout.xx_layout_notification_music_player_big);
         bigView.setImageViewBitmap(R.id.iv_content_big, wrapper.getMusicBitmap());
         bigView.setTextViewText(R.id.tv_title_big, wrapper.getMusicTitle());
         bigView.setTextViewText(R.id.tv_summery_big, wrapper.getMusicAuthor() + " - " + wrapper.getMusicAlbum());
         bigView.setImageViewBitmap(R.id.iv_love_big, BitmapFactory.decodeResource(context.getResources(),
-                isLoved ? R.mipmap.icon_notification_music_loved : R.mipmap.icon_notification_music_love));
+                isLoved ? R.mipmap.xx_icon_notification_music_loved : R.mipmap.xx_icon_notification_music_love));
         bigView.setImageViewBitmap(R.id.iv_play_or_pause_big, BitmapFactory.decodeResource(context.getResources(),
-                isPlaying ? R.mipmap.icon_notification_music_pause : R.mipmap.icon_notification_music_play));
+                isPlaying ? R.mipmap.xx_icon_notification_music_pause : R.mipmap.xx_icon_notification_music_play));
         bigView.setTextViewText(R.id.tv_divider, "");
         return new Notification.Builder(context, NotificationChannelTools.CHANNEL_ID_MUSIC)
                 //设置优先级,设置了此优先级可以出现在QQ音乐播放器通知的上方
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置状态栏小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle("Custom notification")
                 //设置通知内容
@@ -255,27 +255,27 @@ public class NotificationFactory {
      */
     public static Notification createNeteaseCloudMusic(Context context, NotificationMusicContentWrapper wrapper, boolean isLoved, boolean isPlaying) {
 
-        RemoteViews smallView = new RemoteViews(context.getPackageName(), R.layout.layout_notification_music_player_small);
+        RemoteViews smallView = new RemoteViews(context.getPackageName(), R.layout.xx_layout_notification_music_player_small);
         smallView.setImageViewBitmap(R.id.iv_content, wrapper.getMusicBitmap());
         smallView.setTextViewText(R.id.tv_title, wrapper.getMusicTitle());
         smallView.setTextViewText(R.id.tv_summery, wrapper.getMusicAuthor() + " - " + wrapper.getMusicAlbum());
         smallView.setImageViewBitmap(R.id.iv_play_or_pause, BitmapFactory.decodeResource(context.getResources(),
-                isPlaying ? R.mipmap.icon_notification_music_pause : R.mipmap.icon_notification_music_play));
+                isPlaying ? R.mipmap.xx_icon_notification_music_pause : R.mipmap.xx_icon_notification_music_play));
 
-        RemoteViews bigView = new RemoteViews(context.getPackageName(), R.layout.layout_notification_music_player_big);
+        RemoteViews bigView = new RemoteViews(context.getPackageName(), R.layout.xx_layout_notification_music_player_big);
         bigView.setImageViewBitmap(R.id.iv_content_big, wrapper.getMusicBitmap());
         bigView.setTextViewText(R.id.tv_title_big, wrapper.getMusicTitle());
         bigView.setTextViewText(R.id.tv_summery_big, wrapper.getMusicAuthor() + " - " + wrapper.getMusicAlbum());
         bigView.setImageViewBitmap(R.id.iv_love_big, BitmapFactory.decodeResource(context.getResources(),
-                isLoved ? R.mipmap.icon_notification_music_loved : R.mipmap.icon_notification_music_love));
+                isLoved ? R.mipmap.xx_icon_notification_music_loved : R.mipmap.xx_icon_notification_music_love));
         bigView.setImageViewBitmap(R.id.iv_play_or_pause_big, BitmapFactory.decodeResource(context.getResources(),
-                isPlaying ? R.mipmap.icon_notification_music_pause : R.mipmap.icon_notification_music_play));
+                isPlaying ? R.mipmap.xx_icon_notification_music_pause : R.mipmap.xx_icon_notification_music_play));
         bigView.setTextViewText(R.id.tv_divider, "");
         return new Notification.Builder(context, NotificationChannelTools.CHANNEL_ID_MUSIC)
                 //设置优先级,设置了此优先级可以出现在QQ音乐播放器通知的上方
                 .setPriority(Notification.PRIORITY_MAX)
                 //设置状态栏小图标
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.xx_ic_launcher)
                 //设置通知标题
                 .setContentTitle("Custom notification")
                 //设置通知内容

@@ -4,15 +4,15 @@
     <application>
 
         <provider
-            android:name=".function.screen_adaption_ctx.InitProvider"
+            android:name=".function.screen_adaption_ctx.XXInitProvider"
             android:authorities="${applicationId}.autosize-init-provider"
             android:exported="false"
             android:multiprocess="true" />
 
         <activity
-            android:name=".function.permission.PermissionActivity"
+            android:name=".function.permission.XXPermissionActivity"
             android:launchMode="standard"
-            android:theme="@style/PermissionActivityTheme"
+            android:theme="@style/XXPermissionActivityTheme"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
 
     </application>

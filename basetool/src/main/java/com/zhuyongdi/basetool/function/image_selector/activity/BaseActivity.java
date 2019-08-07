@@ -3,11 +3,11 @@ package com.zhuyongdi.basetool.function.image_selector.activity;
 import android.app.Activity;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.function.permission.Action;
-import com.zhuyongdi.basetool.function.permission.AndPermission;
-import com.zhuyongdi.basetool.function.permission.Permission;
-import com.zhuyongdi.basetool.function.toast.ZYD_ToastUtil;
-import com.zhuyongdi.basetool.tool.screen.ScreenTool;
+import com.zhuyongdi.basetool.function.permission.XXAction;
+import com.zhuyongdi.basetool.function.permission.XXAndPermission;
+import com.zhuyongdi.basetool.function.permission.XXPermission;
+import com.zhuyongdi.basetool.function.toast.XXToast;
+import com.zhuyongdi.basetool.tool.screen.XXScreenUtil;
 
 import java.util.List;
 
@@ -17,18 +17,18 @@ import java.util.List;
 public class BaseActivity extends Activity {
 
     public void showToast(String toast) {
-        ZYD_ToastUtil.showToast(toast);
+        XXToast.showToast(toast);
     }
 
     public void setTxtStatusBar() {
-        ScreenTool.setImmersiveStatusBarMode(this, findViewById(R.id.empty));
-        ScreenTool.setStatusBarLightMode(this);
+        XXScreenUtil.setImmersiveStatusBarMode(this, findViewById(R.id.empty));
+        XXScreenUtil.setStatusBarLightMode(this);
     }
 
     public void checkPermission(final OnPermissionGrantedCallback callback) {
-        AndPermission.with(this)
-                .permission(Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE)
-                .onGranted(new Action() {
+        XXAndPermission.with(this)
+                .permission(XXPermission.READ_EXTERNAL_STORAGE, XXPermission.WRITE_EXTERNAL_STORAGE)
+                .onGranted(new XXAction() {
                     @Override
                     public void onAction(List<String> permissions) {
                         if (callback != null) {
@@ -36,7 +36,7 @@ public class BaseActivity extends Activity {
                         }
                     }
                 })
-                .onDenied(new Action() {
+                .onDenied(new XXAction() {
                     @Override
                     public void onAction(List<String> permissions) {
                         showToast("获取权限失败,请重试并同意权限申请");

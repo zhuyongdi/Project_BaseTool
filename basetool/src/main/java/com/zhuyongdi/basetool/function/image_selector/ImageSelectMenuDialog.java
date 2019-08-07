@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.zhuyongdi.basetool.function.image_selector.adapter.SelectMenuAdapter;
 import com.zhuyongdi.basetool.function.image_selector.bean.Folder;
-import com.zhuyongdi.basetool.widget.max_height.MaxHeightListView;
+import com.zhuyongdi.basetool.widget.max_height.XXMaxHeightListView;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class ImageSelectMenuDialog {
 
     private Dialog dialog;
-    private MaxHeightListView lv_content;
+    private XXMaxHeightListView lv_content;
     private SelectMenuAdapter adapter;
     private ArrayList<Folder> list;
     private OnSelectListener onSelectListener;

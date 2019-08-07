@@ -19,9 +19,9 @@ import com.zhuyongdi.basetool.function.image_selector.bean.MediaBean;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaType;
 import com.zhuyongdi.basetool.function.image_selector.config.Config;
 import com.zhuyongdi.basetool.function.image_selector.handler.LocalDataHandler;
-import com.zhuyongdi.basetool.support.SpaceItemDecoration;
-import com.zhuyongdi.basetool.tool.ApplicationUtil;
-import com.zhuyongdi.basetool.tool.screen.PixelTool;
+import com.zhuyongdi.basetool.support.XXSpaceItemDecoration;
+import com.zhuyongdi.basetool.tool.XXApplicationUtil;
+import com.zhuyongdi.basetool.tool.screen.XXPixelUtil;
 
 import java.util.ArrayList;
 
@@ -74,7 +74,7 @@ public class ImageSelectActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_select);
+        setContentView(R.layout.xx_activity_image_select);
         localDataHandler = LocalDataHandler.getInstance(this);
         setTxtStatusBar();
         initIntent();
@@ -124,10 +124,10 @@ public class ImageSelectActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initImageSelectAdapter() {
-        int spacing = PixelTool.dp2px(this, Config.DEFAULT_HORIZONTAL_SPACING);
+        int spacing = XXPixelUtil.dp2px(this, Config.DEFAULT_HORIZONTAL_SPACING);
         rlv_content.setLayoutManager(new GridLayoutManager(this, columnNum));
         ((SimpleItemAnimator) rlv_content.getItemAnimator()).setSupportsChangeAnimations(false);
-        rlv_content.addItemDecoration(new SpaceItemDecoration(spacing, false, SpaceItemDecoration.GRIDLAYOUT));
+        rlv_content.addItemDecoration(new XXSpaceItemDecoration(spacing, false, XXSpaceItemDecoration.GRIDLAYOUT));
         adapter = new SelectImageAdapter(this, localDataList, columnNum, spacing);
         adapter.setOnSelectListener(new SelectImageAdapter.OnSelectListener() {
             @Override
@@ -155,7 +155,7 @@ public class ImageSelectActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void getLoadMediaBeans() {
-        if (!ApplicationUtil.hasExternalStorage()) {
+        if (!XXApplicationUtil.hasExternalStorage()) {
             showToast("没有外部存储");
         }
         new Thread(new Runnable() {

@@ -14,9 +14,9 @@ import android.widget.TextView;
 import com.zhuyongdi.basetool.R;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaBean;
 import com.zhuyongdi.basetool.function.image_selector.bean.MediaType;
-import com.zhuyongdi.basetool.tool.ZYD_ListUtil;
-import com.zhuyongdi.basetool.tool.RandomUtil;
-import com.zhuyongdi.basetool.tool.screen.ScreenTool;
+import com.zhuyongdi.basetool.tool.XXListUtil;
+import com.zhuyongdi.basetool.tool.XXRandomUtil;
+import com.zhuyongdi.basetool.tool.screen.XXScreenUtil;
 
 import java.util.ArrayList;
 
@@ -47,7 +47,7 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
         this.list = list;
         this.inflater = LayoutInflater.from(context);
         int hsTotal = (gridColumnNum - 1) * horizontalSpacing;
-        this.itemWidth = (ScreenTool.getScreenWidth(context) - hsTotal) / gridColumnNum;
+        this.itemWidth = (XXScreenUtil.getScreenWidth(context) - hsTotal) / gridColumnNum;
         this.selectWidth = (int) (itemWidth * SELECT_WIDTH);
         this.videoHeight = (int) (itemWidth * VIDEO_HEIGHT);
         this.selectPadding = (int) (itemWidth * SELECT_PADDING);
@@ -64,13 +64,13 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return ZYD_ListUtil.size(list);
+        return XXListUtil.size(list);
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int type) {
-        View itemView = inflater.inflate(R.layout.item_select_image, parent, false);
+        View itemView = inflater.inflate(R.layout.xx_item_select_image, parent, false);
         return new ViewHolder(itemView);
     }
 
@@ -80,9 +80,9 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
         resize(bean.getType(), (ViewHolder) holder);
 //        Glide.with(context).load(new File(bean.getPath())).apply(glideOptions).into(((ViewHolder) holder).iv_logo);
         if (bean.isSelect()) {
-            ((ViewHolder) holder).iv_select.setBackgroundResource(R.mipmap.icon_select);
+            ((ViewHolder) holder).iv_select.setBackgroundResource(R.mipmap.xx_icon_select);
         } else {
-            ((ViewHolder) holder).iv_select.setBackgroundResource(R.mipmap.icon_unselect);
+            ((ViewHolder) holder).iv_select.setBackgroundResource(R.mipmap.xx_icon_unselect);
         }
         if (bean.getType() == MediaType.VIDEO) {
             ((ViewHolder) holder).ll_videoTimeLength.setVisibility(View.VISIBLE);
@@ -106,7 +106,7 @@ public class SelectImageAdapter extends RecyclerView.Adapter {
                 }
             }
         });
-        holder.itemView.setBackgroundColor(RandomUtil.getRandomColor());
+        holder.itemView.setBackgroundColor(XXRandomUtil.getRandomColor());
     }
 
     private void resize(MediaType type, ViewHolder holder) {

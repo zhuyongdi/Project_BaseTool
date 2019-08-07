@@ -53,7 +53,7 @@ public class SelectMenuAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.item_select_menu, null);
+            convertView = inflater.inflate(R.layout.xx_item_select_menu, null);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -73,9 +73,9 @@ public class SelectMenuAdapter extends BaseAdapter {
         }
         holder.tv_number.setText(folder.getCount() + end);
         if (folder.isSelect()) {
-            holder.iv_select.setImageResource(R.mipmap.icon_select);
+            holder.iv_select.setImageResource(R.mipmap.xx_icon_select);
         } else {
-            holder.iv_select.setImageResource(R.mipmap.icon_unselect);
+            holder.iv_select.setImageResource(R.mipmap.xx_icon_unselect);
         }
         return convertView;
     }
