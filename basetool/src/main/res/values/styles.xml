@@ -213,4 +213,21 @@
         <attr name="android:minHeight" />
     </declare-styleable>
 
+    <declare-styleable name="XXBubbleView">
+        <attr name="xx_bubble_orientation" format="enum">
+            <enum name="LEFT" value="0" />
+            <enum name="TOP" value="1" />
+            <enum name="RIGHT" value="2" />
+            <enum name="BOTTOM" value="3" />
+        </attr>
+        <attr name="xx_bubble_background_color" format="color" />
+        <attr name="xx_bubble_stroke_width" format="dimension" />
+        <attr name="xx_bubble_stroke_color" format="color" />
+        <attr name="xx_bubble_radius" format="dimension" />
+        <attr name="xx_bubble_tri_position_pct" format="integer" />
+        <attr name="xx_bubble_tri_position_val" format="dimension" />
+        <attr name="xx_bubble_tri_width" format="dimension" />
+        <attr name="xx_bubble_tri_height" format="dimension" />
+    </declare-styleable>
+
 </resources>
