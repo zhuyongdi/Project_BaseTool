@@ -15,26 +15,50 @@
 
     <!-- activity进出场动画_平移_300 -->
     <style name="xx_activity_animation_translate_300" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/xx_activity_animation_translate_open_enter_300</item>
-        <item name="android:activityOpenExitAnimation">@anim/xx_activity_animation_translate_open_exit_300</item>
-        <item name="android:activityCloseEnterAnimation">@anim/xx_activity_animation_translate_close_enter_300</item>
-        <item name="android:activityCloseExitAnimation">@anim/xx_activity_animation_translate_close_exit_300</item>
+        <item name="android:activityOpenEnterAnimation">
+            @anim/xx_activity_animation_translate_open_enter_300
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/xx_activity_animation_translate_open_exit_300
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/xx_activity_animation_translate_close_enter_300
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/xx_activity_animation_translate_close_exit_300
+        </item>
     </style>
 
     <!-- activity进出场动画_平移_300 -->
     <style name="xx_activity_animation_translate_250" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/xx_activity_animation_translate_open_enter_250</item>
-        <item name="android:activityOpenExitAnimation">@anim/xx_activity_animation_translate_open_exit_250</item>
-        <item name="android:activityCloseEnterAnimation">@anim/xx_activity_animation_translate_close_enter_250</item>
-        <item name="android:activityCloseExitAnimation">@anim/xx_activity_animation_translate_close_exit_250</item>
+        <item name="android:activityOpenEnterAnimation">
+            @anim/xx_activity_animation_translate_open_enter_250
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/xx_activity_animation_translate_open_exit_250
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/xx_activity_animation_translate_close_enter_250
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/xx_activity_animation_translate_close_exit_250
+        </item>
     </style>
 
     <!-- activity进出场动画_平移_300 -->
     <style name="xx_activity_animation_fade_300" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/xx_activity_animation_fade_open_enter_close_enter</item>
-        <item name="android:activityOpenExitAnimation">@anim/xx_activity_animation_fade_open_exit_close_exit</item>
-        <item name="android:activityCloseEnterAnimation">@anim/xx_activity_animation_fade_open_enter_close_enter</item>
-        <item name="android:activityCloseExitAnimation">@anim/xx_activity_animation_fade_open_exit_close_exit</item>
+        <item name="android:activityOpenEnterAnimation">
+            @anim/xx_activity_animation_fade_open_enter_close_enter
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/xx_activity_animation_fade_open_exit_close_exit
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/xx_activity_animation_fade_open_enter_close_enter
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/xx_activity_animation_fade_open_exit_close_exit
+        </item>
     </style>
 
     <!-- Dialog主题,基类-->
@@ -57,10 +81,10 @@
 
     <!--&lt;!&ndash; AndPermission &ndash;&gt;-->
     <!--<style name="permission_PermissionActivity" parent="@android:style/Theme.Translucent.NoTitleBar">-->
-        <!--<item name="android:windowActionBar">false</item>-->
-        <!--<item name="android:windowNoTitle">true</item>-->
-        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
-        <!--<item name="android:windowDisablePreview">true</item>-->
+    <!--<item name="android:windowActionBar">false</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--<item name="android:windowDisablePreview">true</item>-->
     <!--</style>-->
 
     <!-- BottomNavigation -->
@@ -75,6 +99,7 @@
         <item name="android:paddingTop">@dimen/xx_badge_height_padding</item>
         <item name="android:visibility">gone</item>
     </style>
+
     <declare-styleable name="XXBottomNavigationBar">
         <attr name="xx_bottom_navigation_bard_bnb_elevation" format="dimension" />
         <attr name="xx_bottom_navigation_bard_bnb_active_color" format="color" />
@@ -129,14 +154,14 @@
 
     <!-- 圆角ImageView -->
     <declare-styleable name="XXRoundImageView">
-        <attr name="xx_round_image_view_corner_radius" />
-        <attr name="xx_round_image_view_corner_radius_top_left" />
-        <attr name="xx_round_image_view_corner_radius_top_right" />
-        <attr name="xx_round_image_view_corner_radius_bottom_left" />
-        <attr name="xx_round_image_view_corner_radius_bottom_right" />
-        <attr name="xx_round_image_view_icon_src_normal" />
-        <attr name="xx_round_image_view_icon_src_pressed" />
-        <attr name="xx_round_image_view_icon_src_unable" />
+        <attr name="xx_round_image_view_corner_radius" format="dimension" />
+        <attr name="xx_round_image_view_corner_radius_top_left" format="dimension" />
+        <attr name="xx_round_image_view_corner_radius_top_right" format="dimension" />
+        <attr name="xx_round_image_view_corner_radius_bottom_left" format="dimension" />
+        <attr name="xx_round_image_view_corner_radius_bottom_right" format="dimension" />
+        <attr name="xx_round_image_view_icon_src_normal" format="reference" />
+        <attr name="xx_round_image_view_icon_src_pressed" format="reference" />
+        <attr name="xx_round_image_view_icon_src_unable" format="reference" />
         <attr name="xx_round_image_view_border_width" format="dimension" />
         <attr name="xx_round_image_view_border_color" format="color" />
         <attr name="xx_round_image_view_is_circle" format="boolean" />
@@ -169,7 +194,9 @@
         <item name="xx_card_view_card_use_compat_padding">false</item>
         <item name="xx_card_view_card_prevent_corner_overlap">true</item>
     </style>
+
     <style name="XXCardView" parent="Base.XXCardView" />
+
     <attr name="XXCardViewStyle" format="reference" />
     <declare-styleable name="XXCardView">
         <attr name="xx_card_view_card_background_color" format="color" />
