@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="@color/xx_white"
     android:orientation="vertical"
     tools:ignore="PxUsage">
 
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="@color/text_main_color"
+            android:textColor="@color/xx_text_main_color"
             android:textSize="40px"
             tools:text="标题" />
 
@@ -44,6 +44,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/divider_title_bar" />
+        android:background="@color/xx_divider_title_bar" />
 
 </LinearLayout>

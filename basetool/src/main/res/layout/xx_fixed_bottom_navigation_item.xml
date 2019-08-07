@@ -2,31 +2,31 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fixed_bottom_navigation_container"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/fixed_height"
+    android:layout_height="@dimen/xx_fixed_height"
     android:background="?selectableItemBackgroundBorderless"
-    android:paddingLeft="@dimen/fixed_width_padding"
-    android:paddingTop="@dimen/fixed_height_top_padding_inactive"
-    android:paddingRight="@dimen/fixed_width_padding"
-    android:paddingBottom="@dimen/fixed_height_bottom_padding">
+    android:paddingBottom="@dimen/xx_fixed_height_bottom_padding"
+    android:paddingLeft="@dimen/xx_fixed_width_padding"
+    android:paddingRight="@dimen/xx_fixed_width_padding"
+    android:paddingTop="@dimen/xx_fixed_height_top_padding_inactive">
 
     <FrameLayout
         android:id="@+id/fixed_bottom_navigation_icon_container"
-        android:layout_width="@dimen/fixed_icon_badge_grid_width"
-        android:layout_height="@dimen/fixed_icon_badge_grid_height"
+        android:layout_width="@dimen/xx_fixed_icon_badge_grid_width"
+        android:layout_height="@dimen/xx_fixed_icon_badge_grid_height"
         android:layout_gravity="center_horizontal|top">
 
         <ImageView
             android:id="@+id/fixed_bottom_navigation_icon"
-            android:layout_width="@dimen/fixed_icon_grid"
-            android:layout_height="@dimen/fixed_icon_grid"
+            android:layout_width="@dimen/xx_fixed_icon_grid"
+            android:layout_height="@dimen/xx_fixed_icon_grid"
             android:layout_gravity="center"
-            android:contentDescription="@string/icon"
+            android:contentDescription="@string/xx_icon"
             android:gravity="center"
             android:scaleType="fitXY" />
 
-        <com.zhuyongdi.basetool.library.function.bottom_navigation.badge_item.BadgeTextView
+        <com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXBadgeTextView
             android:id="@+id/fixed_bottom_navigation_badge"
-            style="@style/BadgeText"
+            style="@style/XXBadgeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|end"
@@ -43,6 +43,6 @@
         android:lines="1"
         android:scaleX="0.857"
         android:scaleY="0.857"
-        android:textSize="@dimen/fixed_label_active" />
+        android:textSize="@dimen/xx_fixed_label_active" />
 
 </FrameLayout>
