@@ -165,7 +165,6 @@
         <attr name="xx_round_image_view_border_width" format="dimension" />
         <attr name="xx_round_image_view_border_color" format="color" />
         <attr name="xx_round_image_view_is_circle" format="boolean" />
-        <attr name="xx_round_image_view_enabled" />
         <attr name="android:scaleType" />
     </declare-styleable>
 
