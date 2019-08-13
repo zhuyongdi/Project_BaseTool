@@ -79,6 +79,46 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
+    <!-- Dialog动画,从底部平移出来,时长200 -->
+    <style name="XXDialogAnimation_translate_from_bottom_200" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">
+            @anim/xx_dialog_animation_translate_from_bottom_in_200
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/xx_dialog_animation_translate_from_bottom_out_200
+        </item>
+    </style>
+
+    <!-- Dialog动画,从底部平移出来,时长180 -->
+    <style name="XXDialogAnimation_translate_from_bottom_180" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">
+            @anim/xx_dialog_animation_translate_from_bottom_in_180
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/xx_dialog_animation_translate_from_bottom_out_180
+        </item>
+    </style>
+
+    <!-- Dialog动画,从右往左伸缩出来,时长200 -->
+    <style name="XXDialogAnimation_scale_from_right_to_left_200" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">
+            @anim/xx_dialog_animation_scale_from_right_to_left_in_200
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/xx_dialog_animation_scale_from_right_to_left_out_200
+        </item>
+    </style>
+
+    <!-- Dialog动画,从右往左伸缩出来,时长180 -->
+    <style name="XXDialogAnimation_scale_from_right_to_left_180" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">
+            @anim/xx_dialog_animation_scale_from_right_to_left_in_180
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/xx_dialog_animation_scale_from_right_to_left_out_180
+        </item>
+    </style>
+
     <!--&lt;!&ndash; AndPermission &ndash;&gt;-->
     <!--<style name="permission_PermissionActivity" parent="@android:style/Theme.Translucent.NoTitleBar">-->
     <!--<item name="android:windowActionBar">false</item>-->
