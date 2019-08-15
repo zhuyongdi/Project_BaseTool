@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.PopupWindow;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.tool.screen.XXScreenUtil;
 
 /**
  * 软键盘高度监听器
@@ -59,11 +57,6 @@ public class XXKeyboardHeightProvider extends PopupWindow {
     private Activity activity;
 
     /**
-     * 是否设置了沉浸式状态栏
-     */
-    private int immersiveStatusBarHeight;
-
-    /**
      * 用来获取软键盘高度的PopWindow的View的高度
      */
     private int popWindowHeight;
@@ -74,20 +67,13 @@ public class XXKeyboardHeightProvider extends PopupWindow {
     public int COMPARE;
 
     /**
-     * 设置是否打印Log
-     */
-    private boolean logEnable = false;
-
-    /**
      * 实例化入口
      *
-     * @param activity                activity
-     * @param isSetImmersiveStatusBar 是否设置了沉浸式状态栏
+     * @param activity activity
      */
-    public XXKeyboardHeightProvider(Activity activity, boolean isSetImmersiveStatusBar) {
+    public XXKeyboardHeightProvider(Activity activity) {
         super(activity);
         this.activity = activity;
-        this.immersiveStatusBarHeight = isSetImmersiveStatusBar ? XXScreenUtil.getImmersiveStatusBarHeight(activity) : 0;
         this.COMPARE = dp2px(activity, 200);
 
         LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -144,13 +130,6 @@ public class XXKeyboardHeightProvider extends PopupWindow {
     }
 
     /**
-     * 设置是否打印Log
-     */
-    public void setLogEnable(boolean logEnable) {
-        this.logEnable = logEnable;
-    }
-
-    /**
      * 获取屏幕方向
      */
     private int getScreenOrientation() {
@@ -168,16 +147,13 @@ public class XXKeyboardHeightProvider extends PopupWindow {
             popWindowHeight = popupView.getHeight();
         }
         int keyboardHeight = popWindowHeight - rect.bottom;
-        if (logEnable) {
-            Log.v(TAG, "软键盘高度变化:height:" + keyboardHeight);
-        }
         if (keyboardHeight == 0) {
             notifyKeyboardHeightChanged(0, orientation);
         } else if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            this.keyboardPortraitHeight = keyboardHeight + immersiveStatusBarHeight;
+            this.keyboardPortraitHeight = keyboardHeight;
             notifyKeyboardHeightChanged(keyboardPortraitHeight, orientation);
         } else {
-            this.keyboardLandscapeHeight = keyboardHeight + immersiveStatusBarHeight;
+            this.keyboardLandscapeHeight = keyboardHeight;
             notifyKeyboardHeightChanged(keyboardLandscapeHeight, orientation);
         }
     }
