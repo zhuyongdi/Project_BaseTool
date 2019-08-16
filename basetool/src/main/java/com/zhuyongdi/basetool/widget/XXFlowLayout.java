@@ -37,13 +37,18 @@ public class XXFlowLayout extends ViewGroup {
         mCenterTB = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15, getResources().getDisplayMetrics());
     }
 
-    /**
-     * 设置Margins
-     */
     public void setMargins(int centerLR, int centerTB) {
         this.mCenterLR = centerLR;
         this.mCenterTB = centerTB;
         invalidate();
+    }
+
+    public int getCenterLR() {
+        return this.mCenterLR;
+    }
+
+    public int getCenterTB() {
+        return this.mCenterTB;
     }
 
     @Override
