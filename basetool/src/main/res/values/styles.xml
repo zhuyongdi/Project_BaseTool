@@ -169,6 +169,28 @@
         <attr name="xx_nine_grid_view_single_max_width" format="float" />
     </declare-styleable>
 
+    <!-- SwitchButton控件 -->
+    <declare-styleable name="XXSwitchButton">
+        <attr name="xx_switch_button_shadow_radius" format="reference|dimension" />
+        <attr name="xx_switch_button_shadow_offset" format="reference|dimension" />
+        <attr name="xx_switch_button_shadow_color" format="reference|color" />
+        <attr name="xx_switch_button_uncheck_color" format="reference|color" />
+        <attr name="xx_switch_button_checked_color" format="reference|color" />
+        <attr name="xx_switch_button_border_width" format="reference|dimension" />
+        <attr name="xx_switch_button_checkline_color" format="reference|color" />
+        <attr name="xx_switch_button_checkline_width" format="reference|dimension" />
+        <attr name="xx_switch_button_uncheckcircle_color" format="reference|color" />
+        <attr name="xx_switch_button_uncheckcircle_width" format="reference|dimension" />
+        <attr name="xx_switch_button_uncheckcircle_radius" format="reference|dimension" />
+        <attr name="xx_switch_button_checked" format="reference|boolean" />
+        <attr name="xx_switch_button_shadow_effect" format="reference|boolean" />
+        <attr name="xx_switch_button_effect_duration" format="reference|integer" />
+        <attr name="xx_switch_button_button_color" format="reference|color" />
+        <attr name="xx_switch_button_show_indicator" format="reference|boolean" />
+        <attr name="xx_switch_button_background" format="reference|color" />
+        <attr name="xx_switch_button_enable_effect" format="reference|boolean" />
+    </declare-styleable>
+
     <!-- 阴影圆角Layout -->
     <declare-styleable name="XXRSLayout">
         <attr name="xx_rs_radius_left_top" format="dimension" />
