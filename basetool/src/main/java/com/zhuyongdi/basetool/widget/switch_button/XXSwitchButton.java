@@ -81,17 +81,17 @@ public class XXSwitchButton extends View implements Checkable {
                 true);
 
         uncheckCircleColor = optColor(typedArray,
-                R.styleable.XXSwitchButton_xx_switch_button_uncheckcircle_color,
+                R.styleable.XXSwitchButton_xx_switch_button_uncheck_circle_color,
                 0XffAAAAAA);//0XffAAAAAA;
 
         uncheckCircleWidth = optPixelSize(typedArray,
-                R.styleable.XXSwitchButton_xx_switch_button_uncheckcircle_width,
+                R.styleable.XXSwitchButton_xx_switch_button_uncheck_circle_width,
                 dp2pxInt(1.5f));//dp2pxInt(1.5f);
 
         uncheckCircleOffsetX = dp2px(10);
 
         uncheckCircleRadius = optPixelSize(typedArray,
-                R.styleable.XXSwitchButton_xx_switch_button_uncheckcircle_radius,
+                R.styleable.XXSwitchButton_xx_switch_button_uncheck_circle_radius,
                 dp2px(4));//dp2px(4);
 
         checkedLineOffsetX = dp2px(4);
@@ -122,11 +122,11 @@ public class XXSwitchButton extends View implements Checkable {
                 dp2pxInt(1));//dp2pxInt(1);
 
         checkLineColor = optColor(typedArray,
-                R.styleable.XXSwitchButton_xx_switch_button_checkline_color,
+                R.styleable.XXSwitchButton_xx_switch_button_check_line_color,
                 Color.WHITE);//Color.WHITE;
 
         checkLineWidth = optPixelSize(typedArray,
-                R.styleable.XXSwitchButton_xx_switch_button_checkline_width,
+                R.styleable.XXSwitchButton_xx_switch_button_check_line_width,
                 dp2pxInt(1f));//dp2pxInt(1.0f);
 
         checkLineLength = dp2px(6);
