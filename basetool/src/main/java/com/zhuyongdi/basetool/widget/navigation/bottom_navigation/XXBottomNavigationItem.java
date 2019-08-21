@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,9 +11,9 @@ import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 
-import com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXBadgeItem;
-import com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXShapeBadgeItem;
-import com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXTextBadgeItem;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXBadgeItem;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXShapeBadgeItem;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXTextBadgeItem;
 
 /**
  * Class description : Holds data for tabs (i.e data structure which holds all data to paint a tab)

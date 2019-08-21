@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -23,11 +23,11 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.function.bottom_navigation.behaivor.XXBottomNavBarFabBehaviour;
-import com.zhuyongdi.basetool.function.bottom_navigation.behaivor.XXBottomVerticalScrollBehavior;
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXBottomNavigationTab;
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXFixedBottomNavigationTab;
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXShiftingBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.behaivor.XXBottomNavBarFabBehaviour;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.behaivor.XXBottomVerticalScrollBehavior;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXFixedBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXShiftingBottomNavigationTab;
 import com.zhuyongdi.basetool.tool.screen.XXScreenUtil;
 
 import java.lang.annotation.Retention;

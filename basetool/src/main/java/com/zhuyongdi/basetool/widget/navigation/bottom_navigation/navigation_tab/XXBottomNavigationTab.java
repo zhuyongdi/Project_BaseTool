@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab;
 
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
@@ -17,8 +17,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXBadgeItem;
-import com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXBadgeTextView;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXBadgeItem;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXBadgeTextView;
 
 /**
  * Class description

@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.behaivor;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.behaivor;
 
 
 import android.content.Context;

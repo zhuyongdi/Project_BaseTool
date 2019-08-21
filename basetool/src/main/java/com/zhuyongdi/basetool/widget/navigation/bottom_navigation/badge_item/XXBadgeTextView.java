@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.badge_item;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -24,7 +24,7 @@
             android:gravity="center"
             android:scaleType="fitXY" />
 
-        <com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXBadgeTextView
+        <com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXBadgeTextView
             android:id="@+id/fixed_bottom_navigation_badge"
             style="@style/XXBadgeText"
             android:layout_width="wrap_content"

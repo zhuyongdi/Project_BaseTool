@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.badge_item;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXBottomNavigationTab;
 
 /**
  * Class description

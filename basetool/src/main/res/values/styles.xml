@@ -206,6 +206,45 @@
         <attr name="xx_rs_shadow_color" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="XXTabLayout">
+        <attr name="xx_tab_layout_indicator_height" format="dimension" />
+        <attr name="xx_tab_layout_indicator_width" format="dimension" />
+        <attr name="xx_tab_layout_indicator_color" format="color" />
+        <attr name="xx_tab_layout_padding" format="dimension" />
+        <attr name="xx_tab_layout_padding_start" format="dimension" />
+        <attr name="xx_tab_layout_padding_top" format="dimension" />
+        <attr name="xx_tab_layout_padding_end" format="dimension" />
+        <attr name="xx_tab_layout_padding_bottom" format="dimension" />
+        <attr name="xx_tab_layout_text_appearance" format="reference" />
+        <attr name="xx_tab_layout_text_color" format="color" />
+        <attr name="xx_tab_layout_selected_text_color" format="color" />
+        <attr name="xx_tab_layout_min_width" format="dimension" />
+        <attr name="xx_tab_layout_max_width" format="dimension" />
+        <attr name="xx_tab_background_color" format="reference|color" />
+        <attr name="xx_tab_selected_background_color" format="reference|color" />
+        <attr name="xx_tab_layout_content_start" format="dimension" />
+        <attr name="xx_tab_layout_mode">
+            <enum name="scrollable" value="0x00000000" />
+            <enum name="fixed" value="0x00000001" />
+        </attr>
+        <attr name="xx_tab_layout_gravity" format="integer" />
+        <attr name="xx_tab_layout_text_size" format="dimension" />
+        <attr name="xx_tab_layout_text_bold" format="boolean" />
+        <attr name="xx_tab_layout_selected_text_size" format="dimension" />
+        <attr name="xx_tab_layout_selected_text_bold" format="boolean" />
+        <attr name="xx_tab_layout_display_num" format="integer" />
+        <attr name="xx_tab_layout_text_all_caps" format="boolean" />
+        <attr name="xx_tab_layout_divider_height" format="dimension" />
+        <attr name="xx_tab_layout_divider_width" format="dimension" />
+        <attr name="xx_tab_layout_divider_width_changed_with_text" format="boolean" />
+        <attr name="xx_tab_layout_divider_color" format="color" />
+        <attr name="xx_tab_layout_divider_gravity">
+            <enum name="top" value="0x00000000" />
+            <enum name="center" value="0x00000001" />
+            <enum name="bottom" value="0x00000002" />
+        </attr>
+    </declare-styleable>
+
     <!-- 圆形ImageView -->
     <declare-styleable name="XXCircleImageView">
         <attr name="xx_circle_image_view_border_width" format="dimension" />

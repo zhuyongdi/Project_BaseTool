@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab;
 
 import android.annotation.TargetApi;
 import android.content.Context;

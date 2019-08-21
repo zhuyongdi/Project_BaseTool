@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.behaivor;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.behaivor;
 
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -7,7 +7,7 @@ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.view.View;
 import android.view.animation.Interpolator;
 
-import com.zhuyongdi.basetool.function.bottom_navigation.XXBottomNavigationBar;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.XXBottomNavigationBar;
 
 import java.lang.ref.WeakReference;
 import java.util.List;

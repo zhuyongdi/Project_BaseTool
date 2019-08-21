@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.badge_item;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,7 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXBottomNavigationTab;
 import com.zhuyongdi.basetool.tool.screen.XXPixelUtil;
 
 import java.lang.annotation.Retention;

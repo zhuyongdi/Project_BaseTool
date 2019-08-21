@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 
 import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.function.bottom_navigation.badge_item.XXBadgeItem;
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item.XXBadgeItem;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXBottomNavigationTab;
 
 /**
  * Class description : This is utils class specific for this library, most the common code goes here.

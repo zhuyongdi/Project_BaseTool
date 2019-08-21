@@ -1,4 +1,4 @@
-package com.zhuyongdi.basetool.function.bottom_navigation.badge_item;
+package com.zhuyongdi.basetool.widget.navigation.bottom_navigation.badge_item;
 
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.zhuyongdi.basetool.function.bottom_navigation.navigation_tab.XXBottomNavigationTab;
+import com.zhuyongdi.basetool.widget.navigation.bottom_navigation.navigation_tab.XXBottomNavigationTab;
 
 import java.lang.ref.WeakReference;
 
