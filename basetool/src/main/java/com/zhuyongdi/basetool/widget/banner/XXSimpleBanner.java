@@ -1,85 +1,97 @@
 package com.zhuyongdi.basetool.widget.banner;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.view.animation.AccelerateInterpolator;
 
-import com.zhuyongdi.basetool.R;
-import com.zhuyongdi.basetool.component.XXFixedSpeedScroller;
-
-import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
- * 图片轮播器
+ * 自动轮播控件
+ * Created by ZhuYongdi on 2018/8/30.
  */
 public class XXSimpleBanner extends ViewPager {
 
-    private boolean isAutoSlide; //是否自动轮播
-    private int autoSlideInterval; //自动轮播时间间隔
-    private int autoSlideDuration; //自动轮播单张切换时间
-    private Handler slideHandler; //自动轮播的Handler
-    private ZYDSimpleBannerAutoSlideRunnable slideRunnable; //自动轮播的Runnable
-    private ZYDSimpleBannerOnPageChangeListener onPageChangeListener; //OnPageChangeListener
+    private ViewPager.PageTransformer mPageTransformer;
+    private boolean mIsAutoSlide;
+    private long mChangeInterval; //默认3秒
+    private List<String> mImgUrlList;
+    private int mPageMargin;
+    private XXImageLoader mImageLoader;
+    private XXFixedSpeedScroller fixedSpeedScroller;
 
-    public XXSimpleBanner(@NonNull Context context) {
+    public XXSimpleBanner(Context context) {
         this(context, null);
     }
 
-    public XXSimpleBanner(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public XXSimpleBanner(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.XXSimpleBanner);
-        isAutoSlide = a.getBoolean(R.styleable.XXSimpleBanner_xx_simple_banner_is_auto_slide, true);
-        autoSlideInterval = a.getInt(R.styleable.XXSimpleBanner_xx_simple_banner_auto_slide_interval, 3000);
-        a.recycle();
-        slideHandler = new Handler();
-        slideRunnable = new ZYDSimpleBannerAutoSlideRunnable();
-        onPageChangeListener = new ZYDSimpleBannerOnPageChangeListener();
         init();
     }
 
     private void init() {
-        try {
-            Field field = ViewPager.class.getDeclaredField("mScroller");
-            field.setAccessible(true);
-            XXFixedSpeedScroller mScroller = new XXFixedSpeedScroller(getContext(), new AccelerateInterpolator());
-            mScroller.setThisDuration(autoSlideDuration);
-            field.set(this, mScroller);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        this.addOnPageChangeListener(onPageChangeListener);
+        this.mImgUrlList = new ArrayList<>();
+        this.mIsAutoSlide = true;
+        this.mChangeInterval = 3000L;
+        this.fixedSpeedScroller = new XXFixedSpeedScroller(getContext());
     }
 
-    private class ZYDSimpleBannerOnPageChangeListener implements OnPageChangeListener {
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+    public XXSimpleBanner urls(List<String> dataList) {
+        if (dataList == null || dataList.isEmpty()) {
+            mImgUrlList.clear();
+            mImgUrlList.add("null");
+        } else {
+            mImgUrlList.clear();
+            mImgUrlList.addAll(dataList);
         }
-
-        @Override
-        public void onPageSelected(int position) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
+        return this;
     }
 
-    private class ZYDSimpleBannerAutoSlideRunnable implements Runnable {
+    public XXSimpleBanner loader(XXImageLoader loader) {
+        mImageLoader = loader;
+        return this;
+    }
 
-        @Override
-        public void run() {
+    public XXSimpleBanner pageMargin(int pageMargin) {
+        this.mPageMargin = pageMargin;
+        return this;
+    }
 
+    public XXSimpleBanner autoEnable(boolean enable) {
+        mIsAutoSlide = enable;
+        return this;
+    }
+
+    public XXSimpleBanner autoInterval(TimeUnit timeUnit, int value) {
+        mChangeInterval = timeUnit.toMillis(value);
+        return this;
+    }
+
+    public XXSimpleBanner scroller(int duration) {
+        fixedSpeedScroller.setScrollDuration(duration);
+        fixedSpeedScroller.initViewPagerScroll(this);
+        return this;
+    }
+
+    public XXSimpleBanner transformer(ViewPager.PageTransformer pageTransformer) {
+        this.mPageTransformer = pageTransformer;
+        return this;
+    }
+
+    public void start() {
+        setOffscreenPageLimit(mImgUrlList.size() + 1);
+        if (mPageMargin != 0) {
+            setPageMargin(mPageMargin);
+        }
+        XXBannerAdapter adapter = new XXBannerAdapter(this, mImgUrlList, mImageLoader);
+        adapter.setAutoSlide(mIsAutoSlide);
+        adapter.setChangeInterval(mChangeInterval);
+        adapter.startViewPager();
+        setAdapter(adapter);
+        if (mPageTransformer != null) {
+            setPageTransformer(true, mPageTransformer);
         }
     }
 
