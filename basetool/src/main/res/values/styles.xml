@@ -331,4 +331,16 @@
         <attr name="xx_bubble_tri_height" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="XXRoundAttrs">
+        <attr name="xx_round_is_circle" format="boolean" />
+        <attr name="xx_round_corner" />
+        <attr name="xx_round_corner_top_left" />
+        <attr name="xx_round_corner_top_right" />
+        <attr name="xx_round_corner_bottom_left" />
+        <attr name="xx_round_corner_bottom_right" />
+        <attr name="xx_round_stroke_color" />
+        <attr name="xx_round_stroke_width" />
+        <attr name="xx_round_clip_background" />
+    </declare-styleable>
+
 </resources>
