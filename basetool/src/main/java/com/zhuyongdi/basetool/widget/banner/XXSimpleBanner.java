@@ -20,7 +20,8 @@ public class XXSimpleBanner extends ViewPager {
     private List<String> mImgUrlList;
     private int mPageMargin;
     private XXImageLoader mImageLoader;
-    private XXFixedSpeedScroller fixedSpeedScroller;
+    private XXFixedSpeedScroller mFixedSpeedScroller;
+    private XXBannerClickListener mListener;
 
     public XXSimpleBanner(Context context) {
         this(context, null);
@@ -35,7 +36,7 @@ public class XXSimpleBanner extends ViewPager {
         this.mImgUrlList = new ArrayList<>();
         this.mIsAutoSlide = true;
         this.mChangeInterval = 3000L;
-        this.fixedSpeedScroller = new XXFixedSpeedScroller(getContext());
+        this.mFixedSpeedScroller = new XXFixedSpeedScroller(getContext());
     }
 
     public XXSimpleBanner urls(List<String> dataList) {
@@ -70,8 +71,8 @@ public class XXSimpleBanner extends ViewPager {
     }
 
     public XXSimpleBanner scroller(int duration) {
-        fixedSpeedScroller.setScrollDuration(duration);
-        fixedSpeedScroller.initViewPagerScroll(this);
+        mFixedSpeedScroller.setScrollDuration(duration);
+        mFixedSpeedScroller.initViewPagerScroll(this);
         return this;
     }
 
@@ -80,12 +81,17 @@ public class XXSimpleBanner extends ViewPager {
         return this;
     }
 
+    public XXSimpleBanner listener(XXBannerClickListener listener) {
+        this.mListener = listener;
+        return this;
+    }
+
     public void start() {
         setOffscreenPageLimit(mImgUrlList.size() + 1);
         if (mPageMargin != 0) {
             setPageMargin(mPageMargin);
         }
-        XXBannerAdapter adapter = new XXBannerAdapter(this, mImgUrlList, mImageLoader);
+        XXBannerAdapter adapter = new XXBannerAdapter(this, mImgUrlList, mImageLoader, mListener);
         adapter.setAutoSlide(mIsAutoSlide);
         adapter.setChangeInterval(mChangeInterval);
         adapter.startViewPager();

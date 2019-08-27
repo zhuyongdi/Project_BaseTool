@@ -20,6 +20,7 @@ public class XXBannerAdapter extends PagerAdapter {
     private List<View> viewList;
     private List<String> urlList;
     private XXImageLoader imageLoader;
+    private XXBannerClickListener listener;
 
     private boolean isAutoSlide = true; //是否自动滑动
     private int currentPosition; //当前的position
@@ -48,10 +49,11 @@ public class XXBannerAdapter extends PagerAdapter {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    XXBannerAdapter(ViewPager viewPager, List<String> urlList, XXImageLoader creator) {
+    XXBannerAdapter(ViewPager viewPager, List<String> urlList, XXImageLoader creator, XXBannerClickListener listener) {
         this.viewPager = viewPager;
         this.urlList = urlList;
         this.imageLoader = creator;
+        this.listener = listener;
         context = viewPager.getContext();
         initView();
         viewPager.addOnPageChangeListener(new BannerChangeListener());//设置滑动监听
@@ -84,13 +86,13 @@ public class XXBannerAdapter extends PagerAdapter {
     private void initView() {
         viewList = new ArrayList<>();
         for (int i = 0; i < urlList.size() + 2; i++) {
-            String url;
+            final int realPosition;//真实的i
             if (i == 0) {
-                url = urlList.get(urlList.size() - 1);
+                realPosition = urlList.size() - 1;
             } else if (i == urlList.size() + 1) {
-                url = urlList.get(0);
+                realPosition = 0;
             } else {
-                url = urlList.get(i - 1);
+                realPosition = i - 1;
             }
             View v = null;
             if (imageLoader != null) {
@@ -99,9 +101,17 @@ public class XXBannerAdapter extends PagerAdapter {
             if (v == null) {
                 v = new View(context);
             }
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null) {
+                        listener.onBannerClick(realPosition);
+                    }
+                }
+            });
             viewList.add(v);
             if (imageLoader != null) {
-                imageLoader.onLoadImage(context, v, url);
+                imageLoader.onLoadImage(context, v, urlList.get(realPosition));
             }
         }
     }
