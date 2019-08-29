@@ -1,7 +1,6 @@
 package com.zhuyongdi.basetool.widget.banner;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
@@ -10,17 +9,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class XXBannerAdapter extends PagerAdapter {
 
-    private Context context;
     private ViewPager viewPager;
     private List<View> viewList;
-    private List<String> urlList;
-    private XXImageLoader imageLoader;
-    private XXBannerClickListener listener;
+    private BannerChangeListener onPageChangeListener;
+    private BannerTouchListener onTouchListener;
 
     private boolean isAutoSlide = true; //是否自动滑动
     private int currentPosition; //当前的position
@@ -45,74 +41,45 @@ public class XXBannerAdapter extends PagerAdapter {
     }
 
     void setAutoSlide(boolean isAutoSlide) {
-        this.isAutoSlide = isAutoSlide;
+        if (this.isAutoSlide == !isAutoSlide) {
+            if (isAutoSlide) {
+                this.isAutoSlide = true;
+                startViewPager();
+            } else {
+                this.isAutoSlide = false;
+                stopViewPager();
+            }
+        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    XXBannerAdapter(ViewPager viewPager, List<String> urlList, XXImageLoader creator, XXBannerClickListener listener) {
+    XXBannerAdapter(ViewPager viewPager, List<View> viewList) {
         this.viewPager = viewPager;
-        this.urlList = urlList;
-        this.imageLoader = creator;
-        this.listener = listener;
-        context = viewPager.getContext();
-        initView();
-        viewPager.addOnPageChangeListener(new BannerChangeListener());//设置滑动监听
-        viewPager.setOnTouchListener(new BannerTouchListener()); //设置触摸监听
+        this.viewList = viewList;
+        this.onTouchListener = new BannerTouchListener();
+        this.onPageChangeListener = new BannerChangeListener();
+        viewPager.addOnPageChangeListener(this.onPageChangeListener);
+        viewPager.setOnTouchListener(this.onTouchListener);
     }
 
-    /**
-     * 开始自动轮播
-     */
-    void startViewPager() {
+    @Override
+    public void notifyDataSetChanged() {
+        super.notifyDataSetChanged();
+        this.stopViewPager();
+        this.startViewPager();
+    }
+
+    private void startViewPager() {
         if (!isTouched && viewPager != null && isAutoSlide) {
             handler.postDelayed(runnable, changeInterval);
             isTouched = true;
         }
     }
 
-    /**
-     * 关闭自动轮播
-     */
-    void stopViewPager() {
+    private void stopViewPager() {
         if (isTouched && viewPager != null) {
             handler.removeCallbacks(runnable);
             isTouched = false;
-        }
-    }
-
-    /**
-     * 初始化图片
-     */
-    private void initView() {
-        viewList = new ArrayList<>();
-        for (int i = 0; i < urlList.size() + 2; i++) {
-            final int realPosition;//真实的i
-            if (i == 0) {
-                realPosition = urlList.size() - 1;
-            } else if (i == urlList.size() + 1) {
-                realPosition = 0;
-            } else {
-                realPosition = i - 1;
-            }
-            View v = null;
-            if (imageLoader != null) {
-                v = imageLoader.create(context);
-            }
-            if (v == null) {
-                v = new View(context);
-            }
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (listener != null) {
-                        listener.onBannerClick(realPosition);
-                    }
-                }
-            });
-            viewList.add(v);
-            if (imageLoader != null) {
-                imageLoader.onLoadImage(context, v, urlList.get(realPosition));
-            }
         }
     }
 
