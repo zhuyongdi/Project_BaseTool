@@ -17,6 +17,7 @@ import java.util.List;
 public class XXSimpleBanner extends ViewPager {
 
     private XXFixedSpeedScroller fixedSpeedScroller;
+    private XXBannerClickListener mOnClickListener;
     private XXBannerAdapter adapter;
     private List<String> mUrlList;
     private List<View> mViewList;
@@ -48,7 +49,7 @@ public class XXSimpleBanner extends ViewPager {
         return this;
     }
 
-    private void addItemView(XXImageLoader loader, String url) {
+    private void addItemView(XXImageLoader loader, String url, final int position) {
         View view = null;
         if (loader != null) {
             view = loader.create(context);
@@ -60,6 +61,14 @@ public class XXSimpleBanner extends ViewPager {
         if (loader != null) {
             loader.onLoadImage(context, view, url);
         }
+        view.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mOnClickListener != null) {
+                    mOnClickListener.onBannerClick(position);
+                }
+            }
+        });
     }
 
     public XXSimpleBanner loader(XXImageLoader loader) {
@@ -82,6 +91,11 @@ public class XXSimpleBanner extends ViewPager {
         return this;
     }
 
+    public XXSimpleBanner listener(XXBannerClickListener listener) {
+        this.mOnClickListener = listener;
+        return this;
+    }
+
     public XXSimpleBanner scroller(int duration) {
         this.fixedSpeedScroller.setScrollDuration(duration);
         this.fixedSpeedScroller.initViewPagerScroll(this);
@@ -96,27 +110,27 @@ public class XXSimpleBanner extends ViewPager {
     public void start() {
         if (XXListUtil.isEmpty(mUrlList)) {
             this.mViewList.clear();
-            this.addItemView(mImageLoader, "null");
+            this.addItemView(mImageLoader, "null", 0);
             this.adapter.setAutoSlide(false);
             this.setOffscreenPageLimit(1);
         } else {
             this.mViewList.clear();
             final int len = mUrlList.size();
             if (len == 1) {
-                this.addItemView(mImageLoader, mUrlList.get(0));
+                this.addItemView(mImageLoader, mUrlList.get(0), 0);
                 this.adapter.setAutoSlide(false);
                 this.setOffscreenPageLimit(1);
             } else {
                 for (int i = 0; i < len + 2; i++) {
-                    final String url;
+                    final int position;
                     if (i == 0) {
-                        url = mUrlList.get(len - 1);
+                        position = len - 1;
                     } else if (i == len + 1) {
-                        url = mUrlList.get(0);
+                        position = 0;
                     } else {
-                        url = mUrlList.get(i - 1);
+                        position = i - 1;
                     }
-                    this.addItemView(mImageLoader, url);
+                    this.addItemView(mImageLoader, this.mUrlList.get(position), position);
                 }
                 this.adapter.setAutoSlide(autoEnable);
             }
