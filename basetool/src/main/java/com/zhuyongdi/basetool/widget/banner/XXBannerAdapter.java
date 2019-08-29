@@ -41,15 +41,7 @@ public class XXBannerAdapter extends PagerAdapter {
     }
 
     void setAutoSlide(boolean isAutoSlide) {
-        if (this.isAutoSlide == !isAutoSlide) {
-            if (isAutoSlide) {
-                this.isAutoSlide = true;
-                startViewPager();
-            } else {
-                this.isAutoSlide = false;
-                stopViewPager();
-            }
-        }
+        this.isAutoSlide = isAutoSlide;
     }
 
     @SuppressLint("ClickableViewAccessibility")
