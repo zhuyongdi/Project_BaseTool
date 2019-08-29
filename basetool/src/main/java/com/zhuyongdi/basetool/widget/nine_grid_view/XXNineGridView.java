@@ -226,8 +226,11 @@ public class XXNineGridView extends ViewGroup {
         if (position < this.mImageViewList.size()) {
             imageView = this.mImageViewList.get(position);
         } else {
-            imageView = new ImageView(getContext());
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView = this.mImageLoader.onConfigImageView(XXNineGridView.this.getContext());
+            if (imageView == null) {
+                imageView = new ImageView(getContext());
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
             imageView.setOnClickListener(new OnClickListener() {
                 public void onClick(View v) {
                     XXNineGridView.this.mAdapter.onImageItemClick(XXNineGridView.this.getContext(), XXNineGridView.this, position, XXNineGridView.this.mAdapter.getImageInfo());

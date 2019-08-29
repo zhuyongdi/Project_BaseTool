@@ -23,4 +23,28 @@ public class XXListUtil {
         return isEmpty(list) ? 0 : list.size();
     }
 
+    public static void clearAll(List<?> list, int start, int end) {
+        if (start < 0 || end < 0) {
+            return;
+        }
+        int size = size(list);
+        if (end >= size) {
+            end = size - 1;
+        }
+        if (start > end) {
+            end = start;
+        }
+        int total = end - start + 1;
+        int removeCount = 0;
+        for (int i = 0; i < size; i++) {
+            if (i >= start && i <= end) {
+                list.remove(i - removeCount);
+                removeCount++;
+            }
+            if (removeCount == total) {
+                return;
+            }
+        }
+    }
+
 }
