@@ -47,7 +47,7 @@ public class XXRoundHelper {
             mDefaultStrokeColor = Color.WHITE;
         }
         mStrokeWidth = ta.getDimensionPixelSize(R.styleable.XXRoundAttrs_xx_round_stroke_width, 0);
-        mClipBackground = ta.getBoolean(R.styleable.XXRoundAttrs_xx_round_clip_background, false);
+        mClipBackground = ta.getBoolean(R.styleable.XXRoundAttrs_xx_round_clip_background, true);
         int roundCorner = ta.getDimensionPixelSize(R.styleable.XXRoundAttrs_xx_round_corner, 0);
         int roundCornerTopLeft = ta.getDimensionPixelSize(
                 R.styleable.XXRoundAttrs_xx_round_corner_top_left, roundCorner);
